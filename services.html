@@ -3,525 +3,398 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Services - Druth High-Speed Internet Solutions</title>
-    <meta name="description" content="Discover Druth's comprehensive internet services including residential broadband, business solutions, and fiber optic connectivity. Find the perfect plan for your needs.">
-    <meta name="keywords" content="ISP services, residential internet, business internet, fiber optic, high-speed broadband, Druth services">
-    
-    <!-- CSS -->
+    <title>Druth Plans | Powering your connection</title>
+    <meta name="description" content="Explore Druth residential, business, and dedicated internet plans. Compare speed, pricing, and features in a clear premium plan selector.">
+    <meta name="keywords" content="Druth plans, residential internet plans, business internet plans, dedicated internet, Powering your connection">
+    <meta name="theme-color" content="#09162b">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
-    <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
-<script src="https://sites.super.myninja.ai/_assets/ninja-daytona-script.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="icon" type="image/png" href="images/druth-logo.png">
+    <noscript><style>.page-loader{display:none !important;}.site-shell{opacity:1 !important;transform:none !important;}</style></noscript>
 </head>
-<body>
-    <!-- Header Navigation -->
-    <header class="header">
-        <nav class="navbar">
-            <div class="nav-container">
-                <div class="nav-logo">
-                    <a href="index.html" style="display: flex; align-items: center; gap: 12px; text-decoration: none;">
-                        <img src="./images/2.png" alt="Druth Logo" class="logo">
+<body class="page-plans">
+    <div class="page-loader" aria-hidden="true"></div>
+    <div class="site-shell">
+        <header class="header">
+            <nav class="navbar" aria-label="Primary navigation">
+                <div class="nav-container">
+                    <a class="brand" href="index.html" aria-label="Druth home">
+                        <img class="brand-logo" src="images/druth-logo.png" alt="Druth logo" width="500" height="500">
                     </a>
-                </div>
-                <div class="nav-menu" id="nav-menu">
-                    <ul class="nav-list">
-                        <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
-                        <li class="nav-item"><a href="services.html" class="nav-link active">Services</a></li>
-                        <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
-                        <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
-                    </ul>
-                    <div class="nav-cta">
-                        <a href="contact.html" class="btn-primary">Get Started</a>
+                    <button class="nav-toggle" id="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-menu" aria-label="Toggle menu">
+                        <span class="bar"></span>
+                        <span class="bar"></span>
+                        <span class="bar"></span>
+                    </button>
+                    <div class="nav-menu" id="nav-menu">
+                        <ul class="nav-list">
+                            <li><a class="nav-link" href="index.html">Home</a></li>
+                            <li><a class="nav-link active" href="services.html">Plans</a></li>
+                            <li><a class="nav-link" href="about.html">About</a></li>
+                            <li><a class="nav-link" href="blog.html">Blog</a></li>
+                            <li><a class="nav-link" href="contact.html">Contact</a></li>
+                        </ul>
+                        <div class="nav-actions">
+                            <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Toggle color theme">
+                                <i class="fa-solid fa-moon"></i>
+                                <i class="fa-solid fa-sun"></i>
+                            </button>
+                            <a class="btn-primary btn-header" href="contact.html">Talk to Druth</a>
+                        </div>
                     </div>
                 </div>
-                <div class="nav-toggle" id="nav-toggle">
-                    <span class="bar"></span>
-                    <span class="bar"></span>
-                    <span class="bar"></span>
-                </div>
-            </div>
-        </nav>
-    </header>
+            </nav>
+        </header>
 
-    <!-- Page Hero -->
-    <section class="page-hero" style="background: linear-gradient(135deg, var(--secondary-midnight-blue) 0%, #1E3A8A 100%); padding: 120px 0 80px; margin-top: 72px;">
-        <div class="container">
-            <div class="page-hero-content">
-                <h1 class="page-hero-title" style="color: var(--background-white); font-size: 3rem; margin-bottom: 1.5rem;">
-                    Our Services
-                </h1>
-                <p class="page-hero-subtitle" style="color: rgba(255, 255, 255, 0.8); font-size: 1.25rem; max-width: 800px; margin: 0 auto;">
-                    Comprehensive internet solutions tailored to meet the unique needs of homes and businesses. Experience unmatched speed, reliability, and support.
-                </p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Residential Internet Section -->
-    <section class="residential-service" style="padding: 80px 0; background: var(--background-white);">
-        <div class="container">
-            <div class="service-header" style="text-align: center; margin-bottom: 4rem;">
-                <div class="service-icon" style="width: 100px; height: 100px; background: var(--gradient-primary); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem; font-size: 2.5rem; color: var(--background-white);">
-                    <i class="fas fa-home"></i>
-                </div>
-                <h2 class="section-title">Residential Internet</h2>
-                <p class="section-subtitle">High-speed internet designed for modern homes</p>
-            </div>
-            
-            <div class="residential-content" style="display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center;">
-                <div class="residential-features">
-                    <h3 style="color: var(--secondary-midnight-blue); font-size: 1.875rem; margin-bottom: 2rem;">Why Choose Our Residential Service?</h3>
-                    
-                    <div class="feature-item" style="display: flex; align-items: flex-start; gap: 1.5rem; margin-bottom: 2rem;">
-                        <div class="feature-icon" style="width: 50px; height: 50px; background: rgba(127, 29, 29, 0.1); border-radius: 12px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
-                            <i class="fas fa-rocket" style="color: var(--primary-dark-red); font-size: 1.25rem;"></i>
-                        </div>
-                        <div>
-                            <h4 style="color: var(--secondary-midnight-blue); margin-bottom: 0.5rem;">Lightning Fast Speeds</h4>
-                            <p style="color: var(--text-light); line-height: 1.6;">
-                                From 100 Mbps to 1 Gbps speeds perfect for streaming, gaming, and smart home devices.
-                            </p>
+        <main>
+            <section class="page-hero">
+                <div class="container page-hero-layout">
+                    <div class="page-hero-copy" data-reveal="left">
+                        <span class="eyebrow">Plans Page</span>
+                        <h1 class="section-title">Powering your connection should start with a simple plan choice</h1>
+                        <p>Druth organizes residential, business, and dedicated internet plans into one clear experience so customers can compare faster and contact the team with confidence.</p>
+                        <div class="hero-actions page-actions">
+                            <a class="btn-primary" href="#plans">Browse Plans</a>
+                            <a class="btn-secondary" href="contact.html">Need Help Choosing?</a>
                         </div>
                     </div>
-                    
-                    <div class="feature-item" style="display: flex; align-items: flex-start; gap: 1.5rem; margin-bottom: 2rem;">
-                        <div class="feature-icon" style="width: 50px; height: 50px; background: rgba(127, 29, 29, 0.1); border-radius: 12px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
-                            <i class="fas fa-infinity" style="color: var(--primary-dark-red); font-size: 1.25rem;"></i>
+                    <aside class="page-hero-panel glass-card" data-reveal="right">
+                        <div class="status-chip">
+                            <i class="fa-solid fa-paper-plane"></i>
+                            Plan clicks send directly to druthdigital@gmail.com
                         </div>
-                        <div>
-                            <h4 style="color: var(--secondary-midnight-blue); margin-bottom: 0.5rem;">No Data Caps</h4>
-                            <p style="color: var(--text-light); line-height: 1.6;">
-                                Stream, browse, and download as much as you want without worrying about data limits.
-                            </p>
-                        </div>
-                    </div>
-                    
-                    <div class="feature-item" style="display: flex; align-items: flex-start; gap: 1.5rem; margin-bottom: 2rem;">
-                        <div class="feature-icon" style="width: 50px; height: 50px; background: rgba(127, 29, 29, 0.1); border-radius: 12px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
-                            <i class="fas fa-wifi" style="color: var(--primary-dark-red); font-size: 1.25rem;"></i>
-                        </div>
-                        <div>
-                            <h4 style="color: var(--secondary-midnight-blue); margin-bottom: 0.5rem;">Whole Home WiFi</h4>
-                            <p style="color: var(--text-light); line-height: 1.6;">
-                                Advanced mesh networking ensures strong WiFi coverage in every corner of your home.
-                            </p>
-                        </div>
-                    </div>
-                    
-                    <div class="feature-item" style="display: flex; align-items: flex-start; gap: 1.5rem;">
-                        <div class="feature-icon" style="width: 50px; height: 50px; background: rgba(127, 29, 29, 0.1); border-radius: 12px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
-                            <i class="fas fa-headset" style="color: var(--primary-dark-red); font-size: 1.25rem;"></i>
-                        </div>
-                        <div>
-                            <h4 style="color: var(--secondary-midnight-blue); margin-bottom: 0.5rem;">24/7 Support</h4>
-                            <p style="color: var(--text-light); line-height: 1.6;">
-                                Round-the-clock customer support to resolve any issues quickly and efficiently.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="residential-image">
-                    <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=600&h=400&fit=crop" alt="Residential Internet" style="width: 100%; height: auto; border-radius: 16px; box-shadow: var(--shadow-xl); margin-bottom: 2rem;">
-                    <div class="plan-showcase" style="background: linear-gradient(135deg, #F8FAFC 0%, #F1F5F9 100%); border-radius: 16px; padding: 2rem;">
-                        <h3 style="color: var(--secondary-midnight-blue); text-align: center; margin-bottom: 2rem;">Popular Residential Plans</h3>
-                        
-                        <div class="mini-plan" style="background: var(--background-white); border-radius: 12px; padding: 1.5rem; margin-bottom: 1rem; border-left: 4px solid var(--primary-dark-red);">
-                            <div class="plan-header" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
-                                <h4 style="color: var(--secondary-midnight-blue); margin: 0;">Bronze Home</h4>
-                                <span style="color: var(--primary-dark-red); font-weight: 700; font-size: 1.25rem;">₦10,000/mo</span>
+                        <h2 class="hero-card-title">Every plan inquiry is captured automatically</h2>
+                        <p class="hero-card-copy">When a visitor clicks any plan, Druth receives the selected plan name, category, speed, price, and timestamp through the email workflow.</p>
+                        <div class="info-grid two-up" style="margin-top:1.2rem;">
+                            <div class="info-panel">
+                                <strong>Clear categories</strong>
+                                <p>Switch between plan types without losing context.</p>
                             </div>
-                            <p style="color: var(--text-light); margin: 0;">15 Mbps • Unlimited Data • Free Router</p>
-                           <a href="https://docs.google.com/forms/d/e/1FAIpQLScKr71bp-Ul0YAichmjh9C37JoLZK_tH-hFm8T6p5djCgYgKA/viewform?pli=1"> <button class="btn-secondary plan-button" data-plan="Basic" style="margin-top: 1rem; width: 100%;">Choose This Plan</button></a>
-                        </div>
-                        
-                        <div class="mini-plan" style="background: var(--background-white); border-radius: 12px; padding: 1.5rem; margin-bottom: 1rem; border-left: 4px solid var(--primary-dark-red);">
-                            <div class="plan-header" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
-                                <h4 style="color: var(--secondary-midnight-blue); margin: 0;">Silver Home</h4>
-                                <span style="color: var(--primary-dark-red); font-weight: 700; font-size: 1.25rem;">₦20,000/mo</span>
+                            <div class="info-panel">
+                                <strong>Popular options</strong>
+                                <p>High-conversion plans are highlighted visually.</p>
                             </div>
-                            <p style="color: var(--text-light); margin: 0;">20 Mbps • Unlimited Data • Premium Router</p>
-                            <button class="btn-primary plan-button" data-plan="Premium" style="margin-top: 1rem; width: 100%;">Choose This Plan</button>
                         </div>
-                        
-                        
-                        <div class="mini-plan" style="background: var(--background-white); border-radius: 12px; padding: 1.5rem; border-left: 4px solid var(--primary-dark-red);">
-                            <div class="plan-header" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
-                                <h4 style="color: var(--secondary-midnight-blue); margin: 0;">Gold Home</h4>
-                                <span style="color: var(--primary-dark-red); font-weight: 700; font-size: 1.25rem;">₦25,000/mo</span>
+                    </aside>
+                </div>
+            </section>
+
+            <section class="section" id="plans">
+                <div class="container">
+                    <div class="section-heading centered" data-reveal>
+                        <span class="eyebrow">Choose A Category</span>
+                        <h2 class="section-title">Residential, business, or dedicated</h2>
+                        <p class="section-copy">Use the tabs to switch context instantly. Each plan card keeps the essentials visible: speed, pricing, benefits, and the next action.</p>
+                    </div>
+
+                    <div class="tab-list" role="tablist" aria-label="Plan categories" data-reveal>
+                        <button class="tab-button is-active" type="button" role="tab" aria-selected="true" aria-controls="residential" id="tab-btn-residential" data-tab-target="residential">Residential</button>
+                        <button class="tab-button" type="button" role="tab" aria-selected="false" aria-controls="business" id="tab-btn-business" data-tab-target="business">Business</button>
+                        <button class="tab-button" type="button" role="tab" aria-selected="false" aria-controls="dedicated" id="tab-btn-dedicated" data-tab-target="dedicated">Dedicated</button>
+                    </div>
+
+                    <div class="plans-layout" style="margin-top:2rem;">
+                        <div class="plan-panel is-active" id="residential" role="tabpanel" aria-labelledby="tab-btn-residential">
+                            <div class="plans-grid">
+                                <article class="plan-card" data-reveal>
+                                    <div class="plan-meta">
+                                        <span><i class="fa-solid fa-house"></i> Home</span>
+                                        <span><i class="fa-solid fa-wifi"></i> Up to 20 Mbps</span>
+                                    </div>
+                                    <h3 class="plan-title">Starter Home</h3>
+                                    <p class="plan-copy">A simple, affordable entry point for browsing, classes, and everyday streaming.</p>
+                                    <div class="plan-price">
+                                        <strong>NGN 15,000</strong>
+                                        <span>/ month</span>
+                                    </div>
+                                    <ul class="plan-feature-list">
+                                        <li><i class="fa-solid fa-check"></i> Unlimited browsing support</li>
+                                        <li><i class="fa-solid fa-check"></i> Supports up to 6 devices</li>
+                                        <li><i class="fa-solid fa-check"></i> Installation guidance included</li>
+                                    </ul>
+                                    <button class="btn-secondary plan-select" type="button" data-plan="Starter Home" data-category="Residential" data-speed="Up to 15 Mbps" data-price="NGN 10,000 / month">Subscribe</button>
+                                    <p class="plan-footnote">Ideal for light households that still want dependable day-to-day speed.</p>
+                                </article>
+
+                                <article class="plan-card popular" data-reveal>
+                                    <span class="plan-badge">Most Popular</span>
+                                    <div class="plan-meta">
+                                        <span><i class="fa-solid fa-tv"></i> Streaming</span>
+                                        <span><i class="fa-solid fa-wifi"></i> Up to 25 Mbps</span>
+                                    </div>
+                                    <h3 class="plan-title">Stream Home</h3>
+                                    <p class="plan-copy">Balanced speed for families, entertainment, remote work, and a smoother multi-device experience.</p>
+                                    <div class="plan-price">
+                                        <strong>NGN 20,000</strong>
+                                        <span>/ month</span>
+                                    </div>
+                                    <ul class="plan-feature-list">
+                                        <li><i class="fa-solid fa-check"></i> Better coverage for family usage</li>
+                                        <li><i class="fa-solid fa-check"></i> Supports up to 10 devices</li>
+                                        <li><i class="fa-solid fa-check"></i> Strong value-to-speed balance</li>
+                                    </ul>
+                                    <button class="btn-primary plan-select" type="button" data-plan="Stream Home" data-category="Residential" data-speed="Up to 25 Mbps" data-price="NGN 20,000 / month">Subscribe</button>
+                                    <p class="plan-footnote">A strong default choice for customers who want speed and affordability together.</p>
+                                </article>
+
+                                <article class="plan-card" data-reveal>
+                                    <div class="plan-meta">
+                                        <span><i class="fa-solid fa-users"></i> Family</span>
+                                        <span><i class="fa-solid fa-wifi"></i> Up to 40 Mbps</span>
+                                    </div>
+                                    <h3 class="plan-title">Family Max</h3>
+                                    <p class="plan-copy">Higher throughput for busier homes with more devices, heavier streaming, and remote work overlap.</p>
+                                    <div class="plan-price">
+                                        <strong>NGN 40,000</strong>
+                                        <span>/ month</span>
+                                    </div>
+                                    <ul class="plan-feature-list">
+                                        <li><i class="fa-solid fa-check"></i> Built for heavy evening traffic</li>
+                                        <li><i class="fa-solid fa-check"></i> Supports up to 17 devices</li>
+                                        <li><i class="fa-solid fa-check"></i> Priority setup coordination</li>
+                                    </ul>
+                                    <button class="btn-secondary plan-select" type="button" data-plan="Family Max" data-category="Residential" data-speed="Up to 40 Mbps" data-price="NGN 40,000 / month">Subscribe</button>
+                                    <p class="plan-footnote">Best for homes where multiple users need stable performance at the same time.</p>
+                                </article>
                             </div>
-                            <p style="color: var(--text-light); margin: 0;">25 Mbps • Unlimited Data • Transit Router</p>
-                            <button class="btn-secondary plan-button" data-plan="Ultimate" style="margin-top: 1rem; width: 100%;">Choose This Plan</button>
                         </div>
 
-                        <div class="mini-plan" style="background: var(--background-white); border-radius: 12px; padding: 1.5rem; border-left: 4px solid var(--primary-dark-red);">
-                            <div class="plan-header" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
-                                <h4 style="color: var(--secondary-midnight-blue); margin: 0;">Platinum Home</h4>
-                                <span style="color: var(--primary-dark-red); font-weight: 700; font-size: 1.25rem;">₦40,000/mo</span>
+                        <div class="plan-panel" id="business" role="tabpanel" aria-labelledby="tab-btn-business">
+                            <div class="plans-grid">
+                                <article class="plan-card" data-reveal>
+                                    <div class="plan-meta">
+                                        <span><i class="fa-solid fa-briefcase"></i> Business</span>
+                                        <span><i class="fa-solid fa-wifi"></i> Up to 20 Mbps</span>
+                                    </div>
+                                    <h3 class="plan-title">Business Core</h3>
+                                    <p class="plan-copy">A reliable starting point for small offices that need stable daily operations and better support visibility.</p>
+                                    <div class="plan-price">
+                                        <strong>NGN 45,500</strong>
+                                        <span>/ month</span>
+                                    </div>
+                                    <ul class="plan-feature-list">
+                                        <li><i class="fa-solid fa-check"></i> Office-friendly reliability</li>
+                                        <li><i class="fa-solid fa-check"></i> Email and call support access</li>
+                                        <li><i class="fa-solid fa-check"></i> Supports up to 6 devices</li>
+                                    </ul>
+                                    <button class="btn-secondary plan-select" type="button" data-plan="Business Core" data-category="Business" data-speed="Up to 20 Mbps" data-price="NGN 45,500 / month">Subscribe</button>
+                                    <p class="plan-footnote">For offices that want a cleaner support experience without overbuying bandwidth.</p>
+                                </article>
+
+                                <article class="plan-card popular" data-reveal>
+                                    <span class="plan-badge">Most Popular</span>
+                                    <div class="plan-meta">
+                                        <span><i class="fa-solid fa-building"></i> Teams</span>
+                                        <span><i class="fa-solid fa-wifi"></i> Up to 40 Mbps</span>
+                                    </div>
+                                    <h3 class="plan-title">Business Pro</h3>
+                                    <p class="plan-copy">The best fit for growing teams that need stronger stability, quicker support paths, and room to scale.</p>
+                                    <div class="plan-price">
+                                        <strong>NGN 82,500</strong>
+                                        <span>/ month</span>
+                                    </div>
+                                    <ul class="plan-feature-list">
+                                        <li><i class="fa-solid fa-check"></i> Better support expectation setting</li>
+                                        <li><i class="fa-solid fa-check"></i> Supports up to 10 devices</li>
+                                        <li><i class="fa-solid fa-check"></i> Excellent value for active teams</li>
+                                    </ul>
+                                    <button class="btn-primary plan-select" type="button" data-plan="Business Pro" data-category="Business" data-speed="Up to 40 Mbps" data-price="NGN 82,500 / month">Subscribe</button>
+                                    <p class="plan-footnote">A dependable sweet spot for offices that cannot afford friction during the workday.</p>
+                                </article>
+
+                                <article class="plan-card" data-reveal>
+                                    <div class="plan-meta">
+                                        <span><i class="fa-solid fa-diagram-project"></i> Scale</span>
+                                        <span><i class="fa-solid fa-wifi"></i> Up to 60 Mbps</span>
+                                    </div>
+                                    <h3 class="plan-title">Business Diamond</h3>
+                                    <p class="plan-copy">Higher performance for offices with larger teams, heavier collaboration tools, and busier network demand.</p>
+                                    <div class="plan-price">
+                                        <strong>NGN 122,500</strong>
+                                        <span>/ month</span>
+                                    </div>
+                                    <ul class="plan-feature-list">
+                                        <li><i class="fa-solid fa-check"></i> Strong fit for bigger teams</li>
+                                        <li><i class="fa-solid fa-check"></i> Supports up to 17 devices</li>
+                                        <li><i class="fa-solid fa-check"></i> Priority sales coordination</li>
+                                    </ul>
+                                    <button class="btn-secondary plan-select" type="button" data-plan="Business Diamond" data-category="Business" data-speed="Up to 60 Mbps" data-price="NGN 122,500 / month">Subscribe</button>
+                                    <p class="plan-footnote">Ideal when business continuity and smoother scaling both matter.</p>
+                                </article>
                             </div>
-                            <p style="color: var(--text-light); margin: 0;">30 Mbps • Unlimited Data • Enterprise Router</p>
-                            <button class="btn-secondary plan-button" data-plan="Ultimate" style="margin-top: 1rem; width: 100%;">Choose This Plan</button>
                         </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
 
-    <!-- Business Solutions Section -->
-    <section class="business-service" style="padding: 80px 0; background: linear-gradient(135deg, #F8FAFC 0%, #F1F5F9 100%);">
-        <div class="container">
-            <div class="service-header" style="text-align: center; margin-bottom: 4rem;">
-                <div class="service-icon" style="width: 100px; height: 100px; background: var(--gradient-secondary); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem; font-size: 2.5rem; color: var(--background-white);">
-                    <i class="fas fa-building"></i>
-                </div>
-                <h2 class="section-title">Business Solutions</h2>
-                <p class="section-subtitle">Enterprise-grade internet services for businesses of all sizes</p>
-            </div>
-            
-            <div class="business-content" style="display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center;">
-                <div class="business-plans">
-                    <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=600&h=400&fit=crop" alt="Business Solutions" style="width: 100%; height: auto; border-radius: 16px; box-shadow: var(--shadow-xl); margin-bottom: 2rem;">
-                    <div class="plan-showcase" style="background: var(--background-white); border-radius: 16px; padding: 2rem; box-shadow: var(--shadow-lg);">
-                        <h3 style="color: var(--secondary-midnight-blue); text-align: center; margin-bottom: 2rem;">Business Internet Plans</h3>
-                        
-                        <div class="mini-plan" style="background: linear-gradient(135deg, #F8FAFC 0%, #F1F5F9 100%); border-radius: 12px; padding: 1.5rem; margin-bottom: 1rem; border-left: 4px solid var(--secondary-midnight-blue);">
-                            <div class="plan-header" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
-                                <h4 style="color: var(--secondary-midnight-blue); margin: 0;">Business Basic</h4>
-                                <span style="color: var(--secondary-midnight-blue); font-weight: 700; font-size: 1.25rem;">₦45,500/mo</span>
+                        <div class="plan-panel" id="dedicated" role="tabpanel" aria-labelledby="tab-btn-dedicated">
+                            <div class="plans-grid">
+                                <article class="plan-card" data-reveal>
+                                    <div class="plan-meta">
+                                        <span><i class="fa-solid fa-network-wired"></i> Dedicated</span>
+                                        <span><i class="fa-solid fa-gauge-high"></i> Up to 50 Mbps</span>
+                                    </div>
+                                    <h3 class="plan-title">Dedicated Lite</h3>
+                                    <p class="plan-copy">An entry-level dedicated option for operations that need stronger guarantees than shared connectivity can offer.</p>
+                                    <div class="plan-price">
+                                        <strong>NGN 165,000</strong>
+                                        <span>/ month</span>
+                                    </div>
+                                    <ul class="plan-feature-list">
+                                        <li><i class="fa-solid fa-check"></i> Dedicated performance path</li>
+                                        <li><i class="fa-solid fa-check"></i> Better business continuity posture</li>
+                                        <li><i class="fa-solid fa-check"></i> Supports up to 6 devices</li>
+                                    </ul>
+                                    <button class="btn-secondary plan-select" type="button" data-plan="Dedicated Lite" data-category="Dedicated" data-speed="Up to 50 Mbps" data-price="NGN 165,000 / month">Subscribe</button>
+                                    <p class="plan-footnote">A practical starting point when dedicated service becomes operationally important.</p>
+                                </article>
+
+                                <article class="plan-card popular" data-reveal>
+                                    <span class="plan-badge">Most Popular</span>
+                                    <div class="plan-meta">
+                                        <span><i class="fa-solid fa-server"></i> Mission Critical</span>
+                                        <span><i class="fa-solid fa-gauge-high"></i> Up to 100 Mbps</span>
+                                    </div>
+                                    <h3 class="plan-title">Dedicated Plus</h3>
+                                    <p class="plan-copy">A premium dedicated package for organizations that want stronger assurance, headroom, and professional support handling.</p>
+                                    <div class="plan-price">
+                                        <strong>NGN 245,000</strong>
+                                        <span>/ month</span>
+                                    </div>
+                                    <ul class="plan-feature-list">
+                                        <li><i class="fa-solid fa-check"></i> Strong choice for critical workloads</li>
+                                        <li><i class="fa-solid fa-check"></i> Improved operational resilience</li>
+                                        <li><i class="fa-solid fa-check"></i> Supports up to 10 devices</li>
+                                    </ul>
+                                    <button class="btn-primary plan-select" type="button" data-plan="Dedicated Plus" data-category="Dedicated" data-speed="Up to 100 Mbps" data-price="NGN 245,000 / month">Subscribe</button>
+                                    <p class="plan-footnote">The recommended option for high-priority use cases that need dependable connectivity.</p>
+                                </article>
+
+                                <article class="plan-card" data-reveal>
+                                    <div class="plan-meta">
+                                        <span><i class="fa-solid fa-broadcast-tower"></i> Enterprise</span>
+                                        <span><i class="fa-solid fa-gauge-high"></i> Up to 250 Mbps</span>
+                                    </div>
+                                    <h3 class="plan-title">Dedicated Max</h3>
+                                    <p class="plan-copy">High-capacity dedicated connectivity for enterprise sites, branch networks, and heavier throughput expectations.</p>
+                                    <div class="plan-price">
+                                        <strong>NGN 420,000</strong>
+                                        <span>/ month</span>
+                                    </div>
+                                    <ul class="plan-feature-list">
+                                        <li><i class="fa-solid fa-check"></i> Supports up to 17 devices</li>
+                                        <li><i class="fa-solid fa-check"></i> Excellent fit for scale and uptime priorities</li>
+                                        <li><i class="fa-solid fa-check"></i> Strong support coordination path</li>
+                                    </ul>
+                                    <button class="btn-secondary plan-select" type="button" data-plan="Dedicated Max" data-category="Dedicated" data-speed="Up to 250 Mbps" data-price="NGN 420,000 / month">Subscribe</button>
+                                    <p class="plan-footnote">Best for organizations that want significant dedicated headroom and premium service handling.</p>
+                                </article>
                             </div>
-                            <p style="color: var(--text-light); margin: 0;">20 Mbps • Static IP • Business Support</p>
-                            <button class="btn-secondary plan-button" data-plan="Business Basic" style="margin-top: 1rem; width: 100%;">Choose This Plan</button>
                         </div>
-                        
-                        <div class="mini-plan" style="background: linear-gradient(135deg, #F8FAFC 0%, #F1F5F9 100%); border-radius: 12px; padding: 1.5rem; margin-bottom: 1rem; border-left: 4px solid var(--secondary-midnight-blue);">
-                            <div class="plan-header" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
-                                <h4 style="color: var(--secondary-midnight-blue); margin: 0;">Business Pro</h4>
-                                <span style="color: var(--secondary-midnight-blue); font-weight: 700; font-size: 1.25rem;">₦82,500/mo</span>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section">
+                <div class="container">
+                    <div class="section-heading centered" data-reveal>
+                        <span class="eyebrow">Next Steps</span>
+                        <h2 class="section-title">What happens after someone selects a Druth plan</h2>
+                        <p class="section-copy">The upgraded flow reduces uncertainty. Each click creates a clearer handoff to the team, while support and company information stay easy to find.</p>
+                    </div>
+                    <div class="process-grid">
+                        <article class="process-card" data-reveal>
+                            <strong>1. Plan selected</strong>
+                            <p>The customer clicks a plan card button from the category that matches the need.</p>
+                        </article>
+                        <article class="process-card reveal-delay-1" data-reveal>
+                            <strong>2. Email sent instantly</strong>
+                            <p>Druth receives the plan name, category, speed, price, and timestamp directly in the configured inbox.</p>
+                        </article>
+                        <article class="process-card reveal-delay-2" data-reveal>
+                            <strong>3. Follow-up stays easy</strong>
+                            <p>The contact page and blog give customers a clearer sense of the company before the next conversation.</p>
+                        </article>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section">
+                <div class="container">
+                    <div class="cta-card glass-card" data-reveal>
+                        <div class="cta-layout">
+                            <div class="cta-copy">
+                                <h2>Need a custom recommendation instead of a fixed plan?</h2>
+                                <p>Use the contact page for special requirements, branch offices, or dedicated connectivity requests that need a more tailored conversation.</p>
                             </div>
-                            <p style="color: var(--text-light); margin: 0;">40 Mbps • 5 Static IPs • Priority Support</p>
-                            <button class="btn-primary plan-button" data-plan="Business Pro" style="margin-top: 1rem; width: 100%;">Choose This Plan</button>
-                        </div>
-
-                        <div class="mini-plan" style="background: linear-gradient(135deg, #F8FAFC 0%, #F1F5F9 100%); border-radius: 12px; padding: 1.5rem; margin-bottom: 1rem; border-left: 4px solid var(--secondary-midnight-blue);">
-                            <div class="plan-header" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
-                                <h4 style="color: var(--secondary-midnight-blue); margin: 0;">Business Diamond</h4>
-                                <span style="color: var(--secondary-midnight-blue); font-weight: 700; font-size: 1.25rem;">₦122,500/mo</span>
+                            <div class="hero-actions cta-actions">
+                                <a class="btn-primary" href="contact.html">Contact Druth</a>
+                                <a class="btn-secondary" href="blog.html">Visit Blog</a>
                             </div>
-                            <p style="color: var(--text-light); margin: 0;">60 Mbps • Static IPs • Business Diamond</p>
-                            <button class="btn-secondary plan-button" data-plan="Business Basic" style="margin-top: 1rem; width: 100%;">Choose This Plan</button>
                         </div>
+                    </div>
+                </div>
+            </section>
+        </main>
 
-                        
-                        <div class="mini-plan" style="background: linear-gradient(135deg, #F8FAFC 0%, #F1F5F9 100%); border-radius: 12px; padding: 1.5rem; border-left: 4px solid var(--secondary-midnight-blue);">
-                            <div class="plan-header" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
-                                <h4 style="color: var(--secondary-midnight-blue); margin: 0;">Enterprise</h4>
-                                <span style="color: var(--secondary-midnight-blue); font-weight: 700; font-size: 1.25rem;">Custom</span>
+        <footer class="footer">
+            <div class="container">
+                <div class="footer-panel glass-card">
+                    <div class="footer-grid">
+                        <div class="footer-brand">
+                            <a class="brand brand-footer" href="index.html" aria-label="Druth home">
+                                <img class="brand-logo" src="images/druth-logo.png" alt="Druth logo" width="500" height="500">
+                            </a>
+                            <span class="brand-tag brand-tagline">Powering your connection</span>
+                            <p>Premium-feeling plan discovery and support for residential, business, and dedicated connectivity.</p>
+                            <div class="footer-social">
+                                <a href="mailto:druthdigital@gmail.com" aria-label="Email Druth"><i class="fa-solid fa-envelope"></i></a>
+                                <a href="https://www.facebook.com/profile.php?id=61584218378882" target="_blank" rel="noreferrer" aria-label="Druth on Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                                <a href="https://www.instagram.com/druth.ng/" target="_blank" rel="noreferrer" aria-label="Druth on Instagram"><i class="fa-brands fa-instagram"></i></a>
+                                <a href="contact.html" aria-label="Contact Druth"><i class="fa-solid fa-phone"></i></a>
                             </div>
-                            <p style="color: var(--text-light); margin: 0;">1-10 Gbps • Custom IPs • Dedicated Support</p>
-                            <button class="btn-secondary plan-button" data-plan="Enterprise" style="margin-top: 1rem; width: 100%;">Request Quote</button>
+                        </div>
+                        <div class="footer-column">
+                            <h4>Plans</h4>
+                            <ul class="footer-links">
+                                <li><a href="#residential">Residential</a></li>
+                                <li><a href="#business">Business</a></li>
+                                <li><a href="#dedicated">Dedicated</a></li>
+                            </ul>
+                        </div>
+                        <div class="footer-column">
+                            <h4>Company</h4>
+                            <ul class="footer-links">
+                                <li><a href="about.html">About Druth</a></li>
+                                <li><a href="blog.html">Blog</a></li>
+                                <li><a href="contact.html">Contact</a></li>
+                            </ul>
+                        </div>
+                        <div class="footer-column">
+                            <h4>Legal</h4>
+                            <ul class="footer-links">
+                                <li><a href="Privacy-Policy.html">Privacy Policy</a></li>
+                                <li><a href="terms-of-service.html">Terms of Service</a></li>
+                                <li><a href="cookie-policy.html">Cookie Policy</a></li>
+                            </ul>
                         </div>
                     </div>
-                </div>
-                
-                <div class="business-features">
-                    <h3 style="color: var(--secondary-midnight-blue); font-size: 1.875rem; margin-bottom: 2rem;">Business Features</h3>
-                    
-                    <div class="feature-item" style="display: flex; align-items: flex-start; gap: 1.5rem; margin-bottom: 2rem;">
-                        <div class="feature-icon" style="width: 50px; height: 50px; background: rgba(2, 6, 23, 0.1); border-radius: 12px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
-                            <i class="fas fa-certificate" style="color: var(--secondary-midnight-blue); font-size: 1.25rem;"></i>
-                        </div>
-                        <div>
-                            <h4 style="color: var(--secondary-midnight-blue); margin-bottom: 0.5rem;">99.9% Uptime SLA</h4>
-                            <p style="color: var(--text-light); line-height: 1.6;">
-                                Service Level Agreement guaranteeing maximum uptime for your business operations.
-                            </p>
-                        </div>
-                    </div>
-                    
-                    <div class="feature-item" style="display: flex; align-items: flex-start; gap: 1.5rem; margin-bottom: 2rem;">
-                        <div class="feature-icon" style="width: 50px; height: 50px; background: rgba(2, 6, 23, 0.1); border-radius: 12px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
-                            <i class="fas fa-network-wired" style="color: var(--secondary-midnight-blue); font-size: 1.25rem;"></i>
-                        </div>
-                        <div>
-                            <h4 style="color: var(--secondary-midnight-blue); margin-bottom: 0.5rem;">Dedicated Fiber</h4>
-                            <p style="color: var(--text-light); line-height: 1.6;">
-                                Dedicated fiber connections ensuring consistent speeds and reliability for your business.
-                            </p>
-                        </div>
-                    </div>
-                    
-                    <div class="feature-item" style="display: flex; align-items: flex-start; gap: 1.5rem; margin-bottom: 2rem;">
-                        <div class="feature-icon" style="width: 50px; height: 50px; background: rgba(2, 6, 23, 0.1); border-radius: 12px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
-                            <i class="fas fa-shield-alt" style="color: var(--secondary-midnight-blue); font-size: 1.25rem;"></i>
-                        </div>
-                        <div>
-                            <h4 style="color: var(--secondary-midnight-blue); margin-bottom: 0.5rem;">Enhanced Security</h4>
-                            <p style="color: var(--text-light); line-height: 1.6;">
-                                Advanced security features including DDoS protection and secure data transmission.
-                            </p>
-                        </div>
-                    </div>
-                    
-                    <div class="feature-item" style="display: flex; align-items: flex-start; gap: 1.5rem;">
-                        <div class="feature-icon" style="width: 50px; height: 50px; background: rgba(2, 6, 23, 0.1); border-radius: 12px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
-                            <i class="fas fa-users" style="color: var(--secondary-midnight-blue); font-size: 1.25rem;"></i>
-                        </div>
-                        <div>
-                            <h4 style="color: var(--secondary-midnight-blue); margin-bottom: 0.5rem;">Priority Support</h4>
-                            <p style="color: var(--text-light); line-height: 1.6;">
-                                Dedicated account manager and priority technical support for rapid issue resolution.
-                            </p>
+                    <div class="footer-bottom">
+                        <span>&copy; 2026 Druth. All rights reserved.</span>
+                        <div class="footer-bottom-links">
+                            <a href="services.html">Plans</a>
+                            <a href="blog.html">Blog</a>
+                            <a href="mailto:druthdigital@gmail.com">druthdigital@gmail.com</a>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </footer>
+        <div class="toast-stack" id="toast-stack" aria-live="polite" aria-atomic="true"></div>
+    </div>
 
-    <!-- Fiber Optic Section -->
-    <section class="fiber-service" style="padding: 80px 0; background: var(--background-white);">
-        <div class="container">
-            <div class="service-header" style="text-align: center; margin-bottom: 4rem;">
-                <div class="service-icon" style="width: 100px; height: 100px; background: var(--gradient-primary); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem; font-size: 2.5rem; color: var(--background-white);">
-                    <i class="fas fa-broadcast-tower"></i>
-                </div>
-                <h2 class="section-title">Fiber Optic Technology</h2>
-                <p class="section-subtitle">State-of-the-art fiber infrastructure delivering unmatched performance</p>
-            </div>
-            
-            <div class="fiber-content">
-                <div class="fiber-stats" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; margin-bottom: 4rem;">
-                    <div class="stat-card" style="text-align: center; padding: 2rem; background: linear-gradient(135deg, #F8FAFC 0%, #F1F5F9 100%); border-radius: 16px;">
-                        <div class="stat-icon" style="width: 80px; height: 80px; background: var(--gradient-primary); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem; font-size: 2rem; color: var(--background-white);">
-                            <i class="fas fa-tachometer-alt"></i>
-                        </div>
-                        <h3 style="font-size: 2.5rem; font-weight: 800; color: var(--primary-dark-red); margin-bottom: 0.5rem;">10,000+</h3>
-                        <p style="color: var(--text-light); font-weight: 500;">Miles of Fiber Cable</p>
-                    </div>
-                    
-                    <div class="stat-card" style="text-align: center; padding: 2rem; background: linear-gradient(135deg, #F8FAFC 0%, #F1F5F9 100%); border-radius: 16px;">
-                        <div class="stat-icon" style="width: 80px; height: 80px; background: var(--gradient-primary); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem; font-size: 2rem; color: var(--background-white);">
-                            <i class="fas fa-rocket"></i>
-                        </div>
-                        <h3 style="font-size: 2.5rem; font-weight: 800; color: var(--primary-dark-red); margin-bottom: 0.5rem;">1ms</h3>
-                        <p style="color: var(--text-light); font-weight: 500;">Average Latency</p>
-                    </div>
-                    
-                    <div class="stat-card" style="text-align: center; padding: 2rem; background: linear-gradient(135deg, #F8FAFC 0%, #F1F5F9 100%); border-radius: 16px;">
-                        <div class="stat-icon" style="width: 80px; height: 80px; background: var(--gradient-primary); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem; font-size: 2rem; color: var(--background-white);">
-                            <i class="fas fa-bolt"></i>
-                        </div>
-                        <h3 style="font-size: 2.5rem; font-weight: 800; color: var(--primary-dark-red); margin-bottom: 0.5rem;">Symmetrical</h3>
-                        <p style="color: var(--text-light); font-weight: 500;">Upload & Download</p>
-                    </div>
-                    
-                    <div class="stat-card" style="text-align: center; padding: 2rem; background: linear-gradient(135deg, #F8FAFC 0%, #F1F5F9 100%); border-radius: 16px;">
-                        <div class="stat-icon" style="width: 80px; height: 80px; background: var(--gradient-primary); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem; font-size: 2rem; color: var(--background-white);">
-                            <i class="fas fa-expand-arrows-alt"></i>
-                        </div>
-                        <h3 style="font-size: 2.5rem; font-weight: 800; color: var(--primary-dark-red); margin-bottom: 0.5rem;">Future-Proof</h3>
-                        <p style="color: var(--text-light); font-weight: 500;">Scalable Technology</p>
-                    </div>
-                </div>
-                
-                <div class="fiber-features" style="background: linear-gradient(135deg, var(--secondary-midnight-blue) 0%, #1E3A8A 100%); border-radius: 16px; padding: 3rem; color: var(--background-white);">
-                    <h3 style="font-size: 1.875rem; margin-bottom: 2rem; text-align: center;">Why Fiber Optic?</h3>
-                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
-                        <div>
-                            <h4 style="margin-bottom: 1rem; color: var(--accent-light-gray);"><i class="fas fa-check-circle" style="margin-right: 0.5rem;"></i>Lightning Speed</h4>
-                            <p style="line-height: 1.6; opacity: 0.9;">Data travels at the speed of light, delivering gigabit speeds that traditional copper can't match.</p>
-                        </div>
-                        <div>
-                            <h4 style="margin-bottom: 1rem; color: var(--accent-light-gray);"><i class="fas fa-check-circle" style="margin-right: 0.5rem;"></i>Superior Reliability</h4>
-                            <p style="line-height: 1.6; opacity: 0.9;">Immune to electromagnetic interference and weather conditions that affect other technologies.</p>
-                        </div>
-                        <div>
-                            <h4 style="margin-bottom: 1rem; color: var(--accent-light-gray);"><i class="fas fa-check-circle" style="margin-right: 0.5rem;"></i>Greater Bandwidth</h4>
-                            <p style="line-height: 1.6; opacity: 0.9;">Handle multiple high-bandwidth applications simultaneously without degradation.</p>
-                        </div>
-                        <div>
-                            <h4 style="margin-bottom: 1rem; color: var(--accent-light-gray);"><i class="fas fa-check-circle" style="margin-right: 0.5rem;"></i>Long Distance</h4>
-                            <p style="line-height: 1.6; opacity: 0.9;">Maintain signal quality over much longer distances compared to traditional cables.</p>
-                        </div>
-                        <div>
-                            <h4 style="margin-bottom: 1rem; color: var(--accent-light-gray);"><i class="fas fa-check-circle" style="margin-right: 0.5rem;"></i>Enhanced Security</h4>
-                            <p style="line-height: 1.6; opacity: 0.9;">Difficult to tap, providing inherently secure data transmission.</p>
-                        </div>
-                        <div>
-                            <h4 style="margin-bottom: 1rem; color: var(--accent-light-gray);"><i class="fas fa-check-circle" style="margin-right: 0.5rem;"></i>Low Latency</h4>
-                            <p style="line-height: 1.6; opacity: 0.9;">Minimal delay ensures smooth real-time applications and gaming experiences.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Additional Services Section -->
-    <section class="additional-services" style="padding: 80px 0; background: linear-gradient(135deg, #F8FAFC 0%, #F1F5F9 100%);">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Additional Services</h2>
-                <p class="section-subtitle">Complete solutions for all your connectivity needs</p>
-            </div>
-            
-            <div class="services-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
-                <div class="service-card" style="background: var(--background-white); border-radius: 16px; padding: 2rem; text-align: center; border: 1px solid var(--border-color);">
-                    <div class="service-icon" style="width: 80px; height: 80px; background: var(--gradient-primary); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem; font-size: 2rem; color: var(--background-white);">
-                        <i class="fas fa-phone-alt"></i>
-                    </div>
-                    <h3 style="color: var(--secondary-midnight-blue); margin-bottom: 1rem;">VoIP Solutions</h3>
-                    <p style="color: var(--text-light); line-height: 1.6; margin-bottom: 1.5rem;">
-                        Professional voice over IP services with advanced features for businesses and residential customers.
-                    </p>
-                    <ul style="list-style: none; text-align: left; margin-bottom: 1.5rem;">
-                        <li style="padding: 0.5rem 0; color: var(--text-light); display: flex; align-items: center; gap: 0.5rem;">
-                            <i class="fas fa-check" style="color: var(--success-color); font-size: 0.875rem;"></i>
-                            Unlimited local calling
-                        </li>
-                        <li style="padding: 0.5rem 0; color: var(--text-light); display: flex; align-items: center; gap: 0.5rem;">
-                            <i class="fas fa-check" style="color: var(--success-color); font-size: 0.875rem;"></i>
-                            Voicemail to email
-                        </li>
-                        <li style="padding: 0.5rem 0; color: var(--text-light); display: flex; align-items: center; gap: 0.5rem;">
-                            <i class="fas fa-check" style="color: var(--success-color); font-size: 0.875rem;"></i>
-                            Call forwarding
-                        </li>
-                    </ul>
-                    <a href="contact.html" class="btn-secondary">Learn More</a>
-                </div>
-                
-                <div class="service-card" style="background: var(--background-white); border-radius: 16px; padding: 2rem; text-align: center; border: 1px solid var(--border-color);">
-                    <div class="service-icon" style="width: 80px; height: 80px; background: var(--gradient-primary); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem; font-size: 2rem; color: var(--background-white);">
-                        <i class="fas fa-video"></i>
-                    </div>
-                    <h3 style="color: var(--secondary-midnight-blue); margin-bottom: 1rem;">TV Services</h3>
-                    <p style="color: var(--text-light); line-height: 1.6; margin-bottom: 1.5rem;">
-                        High-definition television services with hundreds of channels and on-demand content.
-                    </p>
-                    <ul style="list-style: none; text-align: left; margin-bottom: 1.5rem;">
-                        <li style="padding: 0.5rem 0; color: var(--text-light); display: flex; align-items: center; gap: 0.5rem;">
-                            <i class="fas fa-check" style="color: var(--success-color); font-size: 0.875rem;"></i>
-                            200+ HD channels
-                        </li>
-                        <li style="padding: 0.5rem 0; color: var(--text-light); display: flex; align-items: center; gap: 0.5rem;">
-                            <i class="fas fa-check" style="color: var(--success-color); font-size: 0.875rem;"></i>
-                            On-demand content
-                        </li>
-                        <li style="padding: 0.5rem 0; color: var(--text-light); display: flex; align-items: center; gap: 0.5rem;">
-                            <i class="fas fa-check" style="color: var(--success-color); font-size: 0.875rem;"></i>
-                            DVR included
-                        </li>
-                    </ul>
-                    <a href="contact.html" class="btn-secondary">Learn More</a>
-                </div>
-                
-                <div class="service-card" style="background: var(--background-white); border-radius: 16px; padding: 2rem; text-align: center; border: 1px solid var(--border-color);">
-                    <div class="service-icon" style="width: 80px; height: 80px; background: var(--gradient-primary); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem; font-size: 2rem; color: var(--background-white);">
-                        <i class="fas fa-shield-alt"></i>
-                    </div>
-                    <h3 style="color: var(--secondary-midnight-blue); margin-bottom: 1rem;">Security Services</h3>
-                    <p style="color: var(--text-light); line-height: 1.6; margin-bottom: 1.5rem;">
-                        Comprehensive cybersecurity solutions to protect your digital assets and privacy.
-                    </p>
-                    <ul style="list-style: none; text-align: left; margin-bottom: 1.5rem;">
-                        <li style="padding: 0.5rem 0; color: var(--text-light); display: flex; align-items: center; gap: 0.5rem;">
-                            <i class="fas fa-check" style="color: var(--success-color); font-size: 0.875rem;"></i>
-                            Antivirus protection
-                        </li>
-                        <li style="padding: 0.5rem 0; color: var(--text-light); display: flex; align-items: center; gap: 0.5rem;">
-                            <i class="fas fa-check" style="color: var(--success-color); font-size: 0.875rem;"></i>
-                            Firewall services
-                        </li>
-                        <li style="padding: 0.5rem 0; color: var(--text-light); display: flex; align-items: center; gap: 0.5rem;">
-                            <i class="fas fa-check" style="color: var(--success-color); font-size: 0.875rem;"></i>
-                            24/7 monitoring
-                        </li>
-                    </ul>
-                    <a href="contact.html" class="btn-secondary">Learn More</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Call to Action Section -->
-    <section class="cta-section" style="padding: 80px 0; background: linear-gradient(135deg, var(--primary-dark-red) 0%, #991B1B 100%);">
-        <div class="container">
-            <div class="cta-content" style="text-align: center; color: var(--background-white);">
-                <h2 style="font-size: 2.5rem; margin-bottom: 1.5rem;">Find the Perfect Service for You</h2>
-                <p style="font-size: 1.25rem; margin-bottom: 2rem; max-width: 600px; margin-left: auto; margin-right: auto;">
-                    Our team is ready to help you choose the right internet solution for your specific needs.
-                </p>
-                <div class="cta-buttons" style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
-                    <a href="contact.html" class="btn-primary" style="background: var(--background-white); color: var(--primary-dark-red);">Contact Sales</a>
-                    <a href="index.html#plans" class="btn-secondary" style="border-color: var(--background-white); color: var(--background-white);">View Plans</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <div class="footer-logo">
-                        <a href="index.html" style="display: flex; align-items: center; gap: 12px; text-decoration: none;">
-                            <img src="druth_logo-removebg-preview.png" alt="Druth Logo" class="logo">
-                            <span class="brand-name">DRUTH</span>
-                        </a>
-                    </div>
-                    <p>Providing reliable high-speed internet to homes and businesses across the nation.</p>
-                    <div class="social-links">
-                        <a href="#" class="social-link"><i class="fab fa-facebook"></i></a>
-                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
-                        <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
-                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
-                    </div>
-                </div>
-                <div class="footer-section">
-                    <h4>Services</h4>
-                    <ul>
-                        <li><a href="services.html">Residential Internet</a></li>
-                        <li><a href="services.html">Business Solutions</a></li>
-                        <li><a href="services.html">Fiber Optic</a></li>
-                        <li><a href="services.html">Managed Services</a></li>
-                    </ul>
-                </div>
-                <div class="footer-section">
-                    <h4>Company</h4>
-                    <ul>
-                        <li><a href="about.html">About Us</a></li>
-                        <li><a href="index.html#coverage">Coverage Map</a></li>
-                        <li><a href="#">Careers</a></li>
-                        <li><a href="#">News & Updates</a></li>
-                    </ul>
-                </div>
-                <div class="footer-section">
-                    <h4>Support</h4>
-                    <ul>
-                        <li><a href="contact.html">Contact Us</a></li>
-                        <li><a href="#">FAQ</a></li>
-                        <li><a href="#">Technical Support</a></li>
-                        <li><a href="#">Billing</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2024 Druth ISP. All rights reserved.</p>
-                <div class="footer-links">
-                    <a href="Privacy-Policy.html">Privacy Policy</a>
-                    <a href="terms-of-service.html">Terms of Service</a>
-                    <a href="cookie-policy.html">Cookie Policy</a>
-                </div>
-            </div>
-        </div>
-    </footer>
-
-    <!-- JavaScript -->
     <script src="js/script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script src="js/email.js"></script>
 </body>
 </html>

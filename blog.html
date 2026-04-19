@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Druth Blog | Powering your connection</title>
+    <meta name="description" content="Read company updates, service announcements, and internet insights from Druth. Powering your connection.">
+    <meta name="keywords" content="Druth blog, Druth news, company updates, internet insights, Powering your connection">
+    <meta name="theme-color" content="#09162b">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="icon" type="image/png" href="images/druth-logo.png">
+    <noscript><style>.page-loader{display:none !important;}.site-shell{opacity:1 !important;transform:none !important;}</style></noscript>
+</head>
+<body class="page-blog">
+    <div class="page-loader" aria-hidden="true"></div>
+    <div class="site-shell">
+        <header class="header">
+            <nav class="navbar" aria-label="Primary navigation">
+                <div class="nav-container">
+                    <a class="brand" href="index.html" aria-label="Druth home">
+                        <img class="brand-logo" src="images/druth-logo.png" alt="Druth logo" width="500" height="500">
+                    </a>
+                    <button class="nav-toggle" id="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-menu" aria-label="Toggle menu">
+                        <span class="bar"></span>
+                        <span class="bar"></span>
+                        <span class="bar"></span>
+                    </button>
+                    <div class="nav-menu" id="nav-menu">
+                        <ul class="nav-list">
+                            <li><a class="nav-link" href="index.html">Home</a></li>
+                            <li><a class="nav-link" href="services.html">Plans</a></li>
+                            <li><a class="nav-link" href="about.html">About</a></li>
+                            <li><a class="nav-link active" href="blog.html">Blog</a></li>
+                            <li><a class="nav-link" href="contact.html">Contact</a></li>
+                        </ul>
+                        <div class="nav-actions">
+                            <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Toggle color theme">
+                                <i class="fa-solid fa-moon"></i>
+                                <i class="fa-solid fa-sun"></i>
+                            </button>
+                            <a class="btn-primary btn-header" href="contact.html">Contact Druth</a>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </header>
+
+        <main>
+            <section class="page-hero">
+                <div class="container page-hero-layout">
+                    <div class="page-hero-copy" data-reveal="left">
+                        <span class="eyebrow">Druth Blog</span>
+                        <h1 class="section-title">A dedicated place for company updates, news, and service insights</h1>
+                        <p>This blog gives Druth a clean place to publish announcements, company information, service education, campaign updates, and messages that help customers understand the brand better.</p>
+                        <div class="hero-actions page-actions">
+                            <a class="btn-primary" href="#latest-posts">Read Latest Posts</a>
+                            <a class="btn-secondary" href="contact.html">Contact Druth</a>
+                        </div>
+                    </div>
+                    <aside class="page-hero-panel glass-card" data-reveal="right">
+                        <div class="status-chip">
+                            <i class="fa-solid fa-newspaper"></i>
+                            Built for ongoing company publishing
+                        </div>
+                        <h2 class="hero-card-title">Easy to extend as Druth grows</h2>
+                        <p class="hero-card-copy">You can keep adding blog cards and article sections whenever you want to publish new information about the company, service campaigns, promotions, or network updates.</p>
+                        <div class="info-grid two-up" style="margin-top:1.2rem;">
+                            <div class="info-panel">
+                                <strong>Company news</strong>
+                                <p>Share updates about growth, service improvements, and milestones.</p>
+                            </div>
+                            <div class="info-panel">
+                                <strong>Customer education</strong>
+                                <p>Publish helpful explanations about plans, speed, affordability, and connectivity.</p>
+                            </div>
+                        </div>
+                    </aside>
+                </div>
+            </section>
+
+            <section class="section" id="latest-posts">
+                <div class="container">
+                    <div class="section-heading centered" data-reveal>
+                        <span class="eyebrow">Latest Posts</span>
+                        <h2 class="section-title">Recent campaigns and company messages from Druth</h2>
+                        <p class="section-copy">These posts turn your current campaign creatives into a proper company blog archive you can keep expanding over time.</p>
+                    </div>
+
+                    <!-- To add a new post later:
+                         1. Duplicate one .blog-card block below.
+                         2. Give it a new href target like #post-new-update.
+                         3. Duplicate one .article-card block in the Articles section and use the same id.
+                    -->
+                    <div class="blog-grid">
+                        <article class="blog-card" data-reveal>
+                            <img src="images/blog-stop-buffering.jpg" alt="Stop buffering. Start living. campaign creative">
+                            <div class="blog-card-body">
+                                <span class="blog-meta">Campaign Update - April 2026</span>
+                                <h3>Stop buffering. Start living.</h3>
+                                <p>A customer-first message from Druth focused on smoother browsing, better everyday performance, and easier sign-up.</p>
+                                <a class="btn-primary" href="#post-stop-buffering">Read Post</a>
+                            </div>
+                        </article>
+                        <article class="blog-card reveal-delay-1" data-reveal>
+                            <img src="images/blog-network-lifestyle.jpg" alt="The network designed for your lifestyle campaign creative">
+                            <div class="blog-card-body">
+                                <span class="blog-meta">Lifestyle Campaign - April 2026</span>
+                                <h3>The network designed for your lifestyle</h3>
+                                <p>A Druth message built around premium browsing, truly unlimited internet, and a more connected everyday life.</p>
+                                <a class="btn-secondary" href="#post-lifestyle-network">Read Post</a>
+                            </div>
+                        </article>
+                        <article class="blog-card reveal-delay-2" data-reveal>
+                            <img src="images/blog-spend-less.jpg" alt="Spend less save more campaign creative">
+                            <div class="blog-card-body">
+                                <span class="blog-meta">Promotional Campaign - April 2026</span>
+                                <h3>Spend less. Save more.</h3>
+                                <p>Druth highlights affordable unlimited data with a direct cost-saving message designed to feel simple and compelling.</p>
+                                <a class="btn-secondary" href="#post-spend-less">Read Post</a>
+                            </div>
+                        </article>
+                        <article class="blog-card reveal-delay-3" data-reveal>
+                            <img src="images/blog-happy-easter.jpg" alt="Happy Easter from Druth creative">
+                            <div class="blog-card-body">
+                                <span class="blog-meta">Seasonal Message - April 2026</span>
+                                <h3>Happy Easter from Druth</h3>
+                                <p>A seasonal message from the company rooted in faith, hope, and the spirit of connection.</p>
+                                <a class="btn-secondary" href="#post-happy-easter">Read Post</a>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section">
+                <div class="container">
+                    <div class="section-heading centered" data-reveal>
+                        <span class="eyebrow">Featured Story</span>
+                        <h2 class="section-title">The kind of brand storytelling Druth can now publish</h2>
+                        <p class="section-copy">The blog is no longer just a placeholder. It now works as a live archive for promotions, seasonal greetings, service positioning, and company communication.</p>
+                    </div>
+                    <div class="blog-featured glass-card" data-reveal>
+                        <img src="images/blog-network-lifestyle.jpg" alt="Featured Druth lifestyle campaign">
+                        <div class="blog-featured-copy">
+                            <span class="blog-meta">Brand Story - April 2026</span>
+                            <h3>Powering your connection now has a publishing home</h3>
+                            <p>With the homepage, plans page, contact flow, and now the blog working together, Druth can communicate promotions, announcements, and company values with a more consistent and premium identity.</p>
+                            <div class="hero-actions">
+                                <a class="btn-primary" href="#post-lifestyle-network">Read the full update</a>
+                                <a class="btn-secondary" href="contact.html">Talk to Druth</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section" id="articles">
+                <div class="container">
+                    <div class="section-heading centered" data-reveal>
+                        <span class="eyebrow">Articles</span>
+                        <h2 class="section-title">Full posts</h2>
+                        <p class="section-copy">These article sections are easy to edit whenever you want to publish more information about the company.</p>
+                    </div>
+                    <div class="article-grid">
+                        <article class="article-card glass-card" id="post-stop-buffering" data-reveal>
+                            <span class="blog-meta">Campaign Update - April 2026</span>
+                            <h3>Stop buffering. Start living.</h3>
+                            <div class="article-content">
+                                <p>This campaign captures one of the clearest emotional promises Druth can make to potential customers: internet should feel smooth, useful, and stress-free. "Stop buffering. Start living." speaks directly to the frustration people feel when their connection gets in the way of work, entertainment, or daily life.</p>
+                                <p>The message also works well because it is simple. It frames Druth as a practical solution, not just another telecom brand talking about speed in abstract terms. It connects the service to a better lifestyle, which makes the promotion more memorable.</p>
+                                <p>As a blog entry, this post gives Druth a way to document campaign thinking, reuse promotional assets, and build a visible history of how the company communicates value to customers over time.</p>
+                            </div>
+                        </article>
+
+                        <article class="article-card glass-card" id="post-lifestyle-network" data-reveal>
+                            <span class="blog-meta">Lifestyle Campaign - April 2026</span>
+                            <h3>The network designed for your lifestyle</h3>
+                            <div class="article-content">
+                                <p>This message positions Druth as more than a utility. It frames the company as part of the customer's everyday routine and digital lifestyle. That is a strong move because people do not experience internet as a technical product first. They experience it as part of how they browse, watch, share, and communicate.</p>
+                                <p>The creative also supports one of Druth's most attractive promises: premium browsing at affordable cost with truly unlimited internet. That combination speaks to both aspiration and value, which makes it useful as both a campaign and a brand statement.</p>
+                                <p>On the blog, this kind of post helps customers understand how Druth thinks about service, positioning, and user needs, while also giving the company a place to showcase campaign work in a more permanent format.</p>
+                            </div>
+                        </article>
+
+                        <article class="article-card glass-card" id="post-spend-less" data-reveal>
+                            <span class="blog-meta">Promotional Campaign - April 2026</span>
+                            <h3>Spend less. Save more.</h3>
+                            <div class="article-content">
+                                <p>This campaign is built around affordability, which remains one of the strongest levers for conversion. By focusing on savings and pairing that message with a specific price point, Druth makes the offer feel direct and accessible instead of vague.</p>
+                                <p>The strength of this message is that it does not abandon the premium brand direction. It still positions Druth as a smart, empowering choice, but it does so in a way that feels practical for customers who are comparing value month to month.</p>
+                                <p>Publishing this on the blog gives the campaign more longevity. It turns a social-style creative into permanent company content that can still support discovery, trust, and customer education.</p>
+                            </div>
+                        </article>
+
+                        <article class="article-card glass-card" id="post-happy-easter" data-reveal>
+                            <span class="blog-meta">Seasonal Message - April 2026</span>
+                            <h3>Happy Easter from Druth</h3>
+                            <div class="article-content">
+                                <p>Druth's Easter message reflects a softer side of the brand. It focuses on renewed faith, love, and hope while keeping the company's connection message visible. Seasonal communication like this helps the brand feel more human and present in the lives of its audience.</p>
+                                <p>It also shows that Druth is not limited to service promotions alone. The company can use its digital channels to share values, seasonal greetings, and moments that resonate more personally with customers and the wider community.</p>
+                                <p>Adding this to the blog gives the message a longer life beyond social media. It becomes part of the public story of how Druth speaks to its audience and what kind of brand presence it wants to build over time.</p>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section">
+                <div class="container">
+                    <div class="cta-card glass-card" data-reveal>
+                        <div class="cta-layout">
+                            <div class="cta-copy">
+                                <h2>Want this page to grow with your company story?</h2>
+                                <p>The new blog is ready for future announcements, team updates, service launches, and educational posts about Druth.</p>
+                            </div>
+                            <div class="hero-actions cta-actions">
+                                <a class="btn-primary" href="contact.html">Contact Druth</a>
+                                <a class="btn-secondary" href="services.html">View Plans</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="footer">
+            <div class="container">
+                <div class="footer-panel glass-card">
+                    <div class="footer-grid">
+                        <div class="footer-brand">
+                            <a class="brand brand-footer" href="index.html" aria-label="Druth home">
+                                <img class="brand-logo" src="images/druth-logo.png" alt="Druth logo" width="500" height="500">
+                            </a>
+                            <span class="brand-tag brand-tagline">Powering your connection</span>
+                            <p>Company updates, service insights, and announcements from a connectivity brand built around trust and clarity.</p>
+                            <div class="footer-social">
+                                <a href="mailto:druthdigital@gmail.com" aria-label="Email Druth"><i class="fa-solid fa-envelope"></i></a>
+                                <a href="https://www.facebook.com/profile.php?id=61584218378882" target="_blank" rel="noreferrer" aria-label="Druth on Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                                <a href="https://www.instagram.com/druth.ng/" target="_blank" rel="noreferrer" aria-label="Druth on Instagram"><i class="fa-brands fa-instagram"></i></a>
+                                <a href="contact.html" aria-label="Contact Druth"><i class="fa-solid fa-phone"></i></a>
+                            </div>
+                        </div>
+                        <div class="footer-column">
+                            <h4>Plans</h4>
+                            <ul class="footer-links">
+                                <li><a href="services.html#residential">Residential</a></li>
+                                <li><a href="services.html#business">Business</a></li>
+                                <li><a href="services.html#dedicated">Dedicated</a></li>
+                            </ul>
+                        </div>
+                        <div class="footer-column">
+                            <h4>Company</h4>
+                            <ul class="footer-links">
+                                <li><a href="about.html">About Druth</a></li>
+                                <li><a href="blog.html">Blog</a></li>
+                                <li><a href="contact.html">Contact</a></li>
+                            </ul>
+                        </div>
+                        <div class="footer-column">
+                            <h4>Legal</h4>
+                            <ul class="footer-links">
+                                <li><a href="Privacy-Policy.html">Privacy Policy</a></li>
+                                <li><a href="terms-of-service.html">Terms of Service</a></li>
+                                <li><a href="cookie-policy.html">Cookie Policy</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="footer-bottom">
+                        <span>&copy; 2026 Druth. All rights reserved.</span>
+                        <div class="footer-bottom-links">
+                            <a href="blog.html">Blog</a>
+                            <a href="services.html">Plans</a>
+                            <a href="mailto:druthdigital@gmail.com">druthdigital@gmail.com</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <div class="toast-stack" id="toast-stack" aria-live="polite" aria-atomic="true"></div>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
