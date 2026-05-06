@@ -1,8 +1,8 @@
 {
-  "name": "druth-digital",
+  "name": "drt",
   "version": "1.0.0",
   "private": true,
-  "description": "Druth Digital broadband plans site with subscription backend",
+  "description": "DRT broadband plans site with subscription backend",
   "main": "server.js",
   "scripts": {
     "start": "node server.js"
