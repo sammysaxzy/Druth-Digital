@@ -12,7 +12,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-    <link rel="icon" type="image/png" href="images/druth-logo.png">
+    <link rel="icon" type="image/png" href="images/druth-logo-transparent.png">
     <noscript><style>.page-loader{display:none !important;}.site-shell{opacity:1 !important;transform:none !important;}</style></noscript>
 </head>
 <body class="page-contact">
@@ -22,7 +22,7 @@
             <nav class="navbar" aria-label="Primary navigation">
                 <div class="nav-container">
                     <a class="brand" href="index.html" aria-label="Druth home">
-                        <img class="brand-logo" src="images/druth-logo.png" alt="Druth logo" width="500" height="500">
+                        <img class="brand-logo" src="images/druth-logo-transparent.png" alt="Druth logo" width="500" height="500">
                     </a>
                     <button class="nav-toggle" id="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-menu" aria-label="Toggle menu">
                         <span class="bar"></span>
@@ -38,10 +38,6 @@
                             <li><a class="nav-link active" href="contact.html">Contact</a></li>
                         </ul>
                         <div class="nav-actions">
-                            <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Toggle color theme">
-                                <i class="fa-solid fa-moon"></i>
-                                <i class="fa-solid fa-sun"></i>
-                            </button>
                             <a class="btn-primary btn-header" href="services.html">View Plans</a>
                         </div>
                     </div>
@@ -115,7 +111,12 @@
                             <h2 class="section-title" style="font-size:clamp(2rem,3vw,2.8rem);">Send your details</h2>
                             <p class="section-copy">Use the form for plan questions, callback requests, or custom business and dedicated needs.</p>
                         </div>
-                        <form class="form-shell" id="contact-inquiry-form" novalidate>
+                        <form class="form-shell" id="contact-inquiry-form" action="https://formsubmit.co/druthdigital@gmail.com" method="POST" novalidate>
+                            <input type="hidden" name="_subject" id="contact-subject" value="New Contact Request from Druth Website - General Inquiry">
+                            <input type="hidden" name="_template" value="table">
+                            <input type="hidden" name="_captcha" value="false">
+                            <input type="hidden" name="_replyto" id="contact-replyto" value="">
+                            <input type="text" name="_honey" class="plan-honeypot" tabindex="-1" autocomplete="off" aria-hidden="true">
                             <div class="form-row">
                                 <div class="form-group">
                                     <label for="contact-name">Name</label>
@@ -131,15 +132,55 @@
                                     <label for="contact-phone">Phone</label>
                                     <input class="input-field" type="tel" id="contact-phone" name="phone" placeholder="+234 800 000 0000">
                                 </div>
-                                <div class="form-group">
-                                    <label for="contact-interest">Plan or service interest</label>
-                                    <select class="select-field" id="contact-interest" name="interest">
-                                        <option value="">Select an option</option>
-                                        <option value="Residential Plans">Residential Plans</option>
-                                        <option value="Business Plans">Business Plans</option>
-                                        <option value="Dedicated Plans">Dedicated Plans</option>
-                                        <option value="General Inquiry">General Inquiry</option>
+                                <div class="form-group form-group--compact">
+                                    <label for="contact-location">Installation Address or Area</label>
+                                    <input class="input-field" type="text" id="contact-location" name="location" placeholder="Your street, estate, office area, or nearest landmark">
+                                    <span class="field-help">Your location helps Druth respond with the most relevant availability and setup guidance.</span>
+                                </div>
+                            </div>
+                            <div class="plan-select-card">
+                                <div class="plan-select-card__header">
+                                    <span class="plan-select-card__eyebrow">Plan Selection</span>
+                                    <h3 class="plan-select-card__title">Choose the internet plan you want us to work on</h3>
+                                    <p class="plan-select-card__copy">Pick a specific package if you already know it, or choose a custom request and let Druth guide you to the best fit.</p>
+                                </div>
+                                <div class="form-group plan-select-card__field">
+                                    <label for="contact-plan">Internet Plan</label>
+                                    <select class="select-field plan-select-card__select" id="contact-plan" name="plan">
+                                        <option value="">Choose a plan or request type</option>
+                                        <optgroup label="Residential Plans">
+                                            <option value="Residential - Smart Home">Smart Home</option>
+                                            <option value="Residential - Silver Home">Silver Home</option>
+                                            <option value="Residential - Premium Home">Premium Home</option>
+                                            <option value="Residential - Plus Home">Plus Home</option>
+                                        </optgroup>
+                                        <optgroup label="SME Plans">
+                                            <option value="SME - SME Silver">SME Silver</option>
+                                            <option value="SME - SME Topaz">SME Topaz</option>
+                                            <option value="SME - SME Plus">SME Plus</option>
+                                            <option value="SME - SME Diamond">SME Diamond</option>
+                                        </optgroup>
+                                        <optgroup label="Custom Requests">
+                                            <option value="Dedicated Internet Request">Dedicated Internet Request</option>
+                                            <option value="Custom Recommendation Request">Custom Recommendation Request</option>
+                                            <option value="Not Sure Yet">Not Sure Yet</option>
+                                        </optgroup>
                                     </select>
+                                    <span class="field-help">Your choice is included directly in the email so the team can respond with the right recommendation faster.</span>
+                                </div>
+                                <div class="plan-select-card__highlights">
+                                    <div class="plan-select-card__item">
+                                        <strong>Residential</strong>
+                                        <span>Home plans designed for everyday streaming, work, and family usage.</span>
+                                    </div>
+                                    <div class="plan-select-card__item">
+                                        <strong>SME</strong>
+                                        <span>Business-ready options for teams that need stable, practical performance.</span>
+                                    </div>
+                                    <div class="plan-select-card__item">
+                                        <strong>Custom</strong>
+                                        <span>Choose this if you want dedicated internet or help selecting the best package.</span>
+                                    </div>
                                 </div>
                             </div>
                             <div class="form-group">
@@ -152,6 +193,7 @@
                                 <span>I agree that Druth can use my information to respond to this inquiry.</span>
                             </label>
                             <button class="btn-primary" type="submit">Send Message</button>
+                            <p class="mini-note">First live submission may trigger a one-time activation email for the Druth inbox before future form messages start arriving normally.</p>
                         </form>
                     </div>
 
@@ -210,7 +252,7 @@
                     <div class="footer-grid">
                         <div class="footer-brand">
                             <a class="brand brand-footer" href="index.html" aria-label="Druth home">
-                                <img class="brand-logo" src="images/druth-logo.png" alt="Druth logo" width="500" height="500">
+                                <img class="brand-logo" src="images/druth-logo-transparent.png" alt="Druth logo" width="500" height="500">
                             </a>
                             <span class="brand-tag brand-tagline">Powering your connection</span>
                             <p>Responsive plan guidance and premium-feeling support for residential, business, and dedicated internet needs.</p>
@@ -261,7 +303,6 @@
     </div>
 
     <script src="js/script.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
     <script src="js/email.js"></script>
 </body>
 </html>

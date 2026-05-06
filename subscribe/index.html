@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Subscribe | Druth Broadband</title>
+    <meta name="description" content="Complete your Druth broadband subscription request with your selected residential or SME plan.">
+    <meta name="theme-color" content="#09162b">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="icon" type="image/png" href="../images/druth-logo-transparent.png">
+    <noscript><style>.page-loader{display:none !important;}.site-shell{opacity:1 !important;transform:none !important;}</style></noscript>
+</head>
+<body class="page-contact">
+    <div class="page-loader" aria-hidden="true"></div>
+    <div class="site-shell">
+        <header class="header">
+            <nav class="navbar" aria-label="Primary navigation">
+                <div class="nav-container">
+                    <a class="brand" href="../index.html" aria-label="Druth home">
+                        <img class="brand-logo" src="../images/druth-logo-transparent.png" alt="Druth logo" width="500" height="500">
+                    </a>
+                    <button class="nav-toggle" id="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-menu" aria-label="Toggle menu">
+                        <span class="bar"></span>
+                        <span class="bar"></span>
+                        <span class="bar"></span>
+                    </button>
+                    <div class="nav-menu" id="nav-menu">
+                        <ul class="nav-list">
+                            <li><a class="nav-link" href="../index.html">Home</a></li>
+                            <li><a class="nav-link active" href="../services.html">Plans</a></li>
+                            <li><a class="nav-link" href="../about.html">About</a></li>
+                            <li><a class="nav-link" href="../blog.html">Blog</a></li>
+                            <li><a class="nav-link" href="../contact.html">Contact</a></li>
+                        </ul>
+                        <div class="nav-actions">
+                            <a class="btn-primary btn-header" href="../services.html">Browse Plans</a>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </header>
+
+        <main>
+            <section class="page-hero">
+                <div class="container page-hero-layout">
+                    <div class="page-hero-copy" data-reveal="left">
+                        <span class="eyebrow">Subscribe</span>
+                        <h1 class="section-title">Confirm your broadband request</h1>
+                        <p>Complete the short form below and Druth will receive your selected plan together with your contact details for follow-up.</p>
+                        <div class="hero-actions page-actions">
+                            <a class="btn-primary" href="#subscribe-form-card">Complete Form</a>
+                            <a class="btn-secondary" href="../services.html">Choose Another Plan</a>
+                        </div>
+                    </div>
+                    <aside class="page-hero-panel glass-card" data-reveal="right">
+                        <div class="status-chip">
+                            <i class="fa-solid fa-envelope-circle-check"></i>
+                            Request details go straight to Druth
+                        </div>
+                        <h2 class="hero-card-title">Your selected plan stays attached to the request</h2>
+                        <p class="hero-card-copy">Your selected plan stays attached so the Druth team can review your request and reach out with the next steps.</p>
+                        <div class="contact-card broadband-plan-summary" id="selected-plan-summary">
+                            <strong>Loading selected plan...</strong>
+                            <p>Please wait while the page loads your chosen package.</p>
+                        </div>
+                    </aside>
+                </div>
+            </section>
+
+            <section class="section" id="subscribe-form-card">
+                <div class="container contact-layout">
+                    <div class="form-card glass-card" data-reveal="left">
+                        <div class="section-heading" style="margin-bottom:1.8rem;">
+                            <span class="eyebrow">Broadband Request</span>
+                            <h2 class="section-title" style="font-size:clamp(2rem,3vw,2.8rem);">Submit your details</h2>
+                            <p class="section-copy">All required fields are marked by validation, and your selected plan is locked in as read-only.</p>
+                        </div>
+                        <form class="form-shell" id="subscribe-form" action="https://formsubmit.co/druthdigital@gmail.com" method="POST" novalidate>
+                            <input type="hidden" name="_subject" value="New Broadband Subscription Request">
+                            <input type="hidden" name="_template" value="table">
+                            <input type="hidden" name="_captcha" value="false">
+                            <input type="hidden" name="_replyto" id="subscribe-replyto" value="">
+                            <input type="text" name="_honey" id="subscribe-company" class="plan-honeypot" tabindex="-1" autocomplete="off" aria-hidden="true">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="subscribe-name">Full Name</label>
+                                    <input class="input-field" type="text" id="subscribe-name" name="name" placeholder="Your full name" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="subscribe-email">Email</label>
+                                    <input class="input-field" type="email" id="subscribe-email" name="email" placeholder="you@example.com" required>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="subscribe-phone">Phone</label>
+                                    <input class="input-field" type="tel" id="subscribe-phone" name="phone" placeholder="+234 800 000 0000" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="subscribe-address">Address</label>
+                                    <input class="input-field" type="text" id="subscribe-address" name="address" placeholder="Installation address" required>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="subscribe-plan">Selected Plan</label>
+                                <input class="input-field" type="text" id="subscribe-plan" name="plan" readonly>
+                            </div>
+                            <div class="form-group">
+                                <label for="subscribe-notes">Notes</label>
+                                <textarea class="textarea-field" id="subscribe-notes" name="notes" placeholder="Any extra notes for the Druth team (optional)"></textarea>
+                            </div>
+                            <button class="btn-primary" type="submit">Submit Request</button>
+                        </form>
+                    </div>
+
+                    <div class="contact-stack">
+                        <div class="glass-card" style="padding:1.6rem;" data-reveal="right">
+                            <h3 class="card-title" style="margin-top:0;">What happens next</h3>
+                            <ul class="timeline-list">
+                                <li><i class="fa-solid fa-check"></i> Druth receives your full subscription details directly.</li>
+                                <li><i class="fa-solid fa-check"></i> Your selected plan stays attached to the request.</li>
+                                <li><i class="fa-solid fa-check"></i> The team follows up using the phone and email you shared.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="footer">
+            <div class="container">
+                <div class="footer-panel glass-card">
+                    <div class="footer-grid">
+                        <div class="footer-brand">
+                            <a class="brand brand-footer" href="../index.html" aria-label="Druth home">
+                                <img class="brand-logo" src="../images/druth-logo-transparent.png" alt="Druth logo" width="500" height="500">
+                            </a>
+                            <span class="brand-tag brand-tagline">Powering your connection</span>
+                            <p>Reliable broadband guidance and subscription support for homes and growing businesses.</p>
+                        </div>
+                    </div>
+                    <div class="footer-bottom">
+                        <span>&copy; 2026 Druth. All rights reserved.</span>
+                        <div class="footer-bottom-links">
+                            <a href="../services.html">Plans</a>
+                            <a href="../contact.html">Contact</a>
+                            <a href="mailto:druthdigital@gmail.com">druthdigital@gmail.com</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <div class="toast-stack" id="toast-stack" aria-live="polite" aria-atomic="true"></div>
+    </div>
+
+    <script src="../js/script.js"></script>
+    <script src="../js/subscribe.js"></script>
+</body>
+</html>

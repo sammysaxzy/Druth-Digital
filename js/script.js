@@ -3,23 +3,16 @@ const body = document.body;
 const header = document.querySelector(".header");
 const navToggle = document.getElementById("nav-toggle");
 const navMenu = document.getElementById("nav-menu");
-const themeToggle = document.getElementById("theme-toggle");
 const toastStack = document.getElementById("toast-stack");
 
-const THEME_KEY = "druth-theme";
 const REDUCED_MOTION = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+const WHATSAPP_CHAT_CONFIG = {
+    phoneNumber: "2348083010887",
+    message: "Hello, Welcome to Druth! How can we assist you today?"
+};
 
 function initTheme() {
-    const savedTheme = localStorage.getItem(THEME_KEY);
-    const preferredLight = window.matchMedia("(prefers-color-scheme: light)").matches;
-    const theme = savedTheme || (preferredLight ? "light" : "dark");
-    root.setAttribute("data-theme", theme);
-}
-
-function toggleTheme() {
-    const nextTheme = root.getAttribute("data-theme") === "light" ? "dark" : "light";
-    root.setAttribute("data-theme", nextTheme);
-    localStorage.setItem(THEME_KEY, nextTheme);
+    root.setAttribute("data-theme", "dark");
 }
 
 function showToast(title, message, type = "info") {
@@ -239,6 +232,122 @@ function initLoader() {
     }
 }
 
+function createWhatsAppUrl(phoneNumber, message) {
+    const sanitizedPhone = String(phoneNumber).replace(/\D/g, "");
+    const encodedMessage = encodeURIComponent(message);
+    return `https://wa.me/${sanitizedPhone}?text=${encodedMessage}`;
+}
+
+function initWhatsAppChat() {
+    const { phoneNumber, message } = WHATSAPP_CHAT_CONFIG;
+
+    if (!phoneNumber || document.querySelector("[data-whatsapp-chat-button]")) {
+        return;
+    }
+
+    const style = document.createElement("style");
+    style.textContent = `
+        .whatsapp-chat-button {
+            position: fixed;
+            right: 1.25rem;
+            bottom: 1.25rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 0.95rem 1.15rem;
+            border: 0;
+            border-radius: 999px;
+            background: linear-gradient(135deg, #25d366 0%, #128c4a 100%);
+            color: #ffffff;
+            box-shadow: 0 18px 38px rgba(18, 140, 74, 0.28);
+            z-index: 1400;
+            transition: transform var(--transition-fast, 180ms ease), box-shadow var(--transition-fast, 180ms ease), filter var(--transition-fast, 180ms ease);
+        }
+
+        .whatsapp-chat-button:hover,
+        .whatsapp-chat-button:focus-visible {
+            transform: translateY(-2px) scale(1.03);
+            box-shadow: 0 22px 46px rgba(18, 140, 74, 0.34);
+            filter: brightness(1.05);
+        }
+
+        .whatsapp-chat-button:focus-visible {
+            outline: 3px solid rgba(255, 255, 255, 0.3);
+            outline-offset: 3px;
+        }
+
+        .whatsapp-chat-button__icon {
+            display: inline-grid;
+            place-items: center;
+            width: 2.7rem;
+            height: 2.7rem;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.16);
+            flex-shrink: 0;
+        }
+
+        .whatsapp-chat-button__icon svg {
+            width: 1.4rem;
+            height: 1.4rem;
+            fill: currentColor;
+        }
+
+        .whatsapp-chat-button__text {
+            display: flex;
+            flex-direction: column;
+            line-height: 1.15;
+        }
+
+        .whatsapp-chat-button__eyebrow {
+            font-size: 0.68rem;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            opacity: 0.82;
+        }
+
+        .whatsapp-chat-button__label {
+            font-size: 0.95rem;
+            font-weight: 700;
+            white-space: nowrap;
+        }
+
+        @media (max-width: 640px) {
+            .whatsapp-chat-button {
+                right: 1rem;
+                bottom: 1rem;
+                padding: 0.9rem;
+            }
+
+            .whatsapp-chat-button__text {
+                display: none;
+            }
+        }
+    `;
+
+    const button = document.createElement("a");
+    button.href = createWhatsAppUrl(phoneNumber, message);
+    button.className = "whatsapp-chat-button";
+    button.target = "_blank";
+    button.rel = "noopener noreferrer";
+    button.setAttribute("aria-label", "Chat with us on WhatsApp");
+    button.setAttribute("data-whatsapp-chat-button", "true");
+    button.innerHTML = `
+        <span class="whatsapp-chat-button__icon" aria-hidden="true">
+            <svg viewBox="0 0 32 32" role="img" aria-hidden="true">
+                <path d="M19.11 17.53c-.29-.14-1.72-.85-1.99-.95-.27-.1-.46-.14-.66.14-.19.29-.76.95-.93 1.14-.17.19-.34.22-.63.07-.29-.14-1.24-.46-2.36-1.46-.87-.78-1.46-1.74-1.63-2.03-.17-.29-.02-.45.12-.6.13-.13.29-.34.44-.51.15-.17.2-.29.29-.48.1-.19.05-.36-.02-.51-.07-.14-.66-1.59-.9-2.18-.24-.57-.49-.49-.66-.5h-.56c-.19 0-.51.07-.78.36-.27.29-1.02.99-1.02 2.41s1.05 2.79 1.19 2.99c.14.19 2.05 3.13 4.97 4.39.7.3 1.24.48 1.67.62.7.22 1.34.19 1.85.12.57-.08 1.72-.7 1.97-1.37.24-.66.24-1.22.17-1.37-.07-.14-.27-.22-.56-.36Z"></path>
+                <path d="M27.27 4.69A15.8 15.8 0 0 0 16.02 0C7.3 0 .2 7.09.2 15.81c0 2.79.73 5.51 2.12 7.91L0 32l8.49-2.22a15.75 15.75 0 0 0 7.53 1.92h.01c8.72 0 15.82-7.09 15.82-15.81 0-4.22-1.64-8.18-4.58-11.2Zm-11.24 24.3h-.01a13.1 13.1 0 0 1-6.68-1.83l-.48-.29-5.04 1.32 1.35-4.91-.31-.5A13.05 13.05 0 0 1 2.9 15.81C2.9 8.58 8.79 2.69 16.03 2.69c3.51 0 6.8 1.37 9.28 3.85a13.02 13.02 0 0 1 3.85 9.27c0 7.23-5.89 13.12-13.13 13.12Z"></path>
+            </svg>
+        </span>
+        <span class="whatsapp-chat-button__text">
+            <span class="whatsapp-chat-button__eyebrow">WhatsApp</span>
+            <span class="whatsapp-chat-button__label">Chat with us</span>
+        </span>
+    `;
+
+    document.head.appendChild(style);
+    document.body.appendChild(button);
+}
+
 function initNav() {
     if (navToggle && navMenu) {
         navToggle.addEventListener("click", () => {
@@ -266,16 +375,15 @@ initPlanTabs();
 initSmoothAnchors();
 initPageTransitions();
 revealElements();
+initWhatsAppChat();
 
 window.addEventListener("scroll", updateHeaderState, { passive: true });
 
-if (themeToggle) {
-    themeToggle.addEventListener("click", toggleTheme);
-}
-
 window.DruthSite = {
     activatePlanTab,
+    createWhatsAppUrl,
     formatTimestamp: () => new Date().toLocaleString(),
     setButtonLoading,
-    showToast
+    showToast,
+    whatsappChatConfig: WHATSAPP_CHAT_CONFIG
 };

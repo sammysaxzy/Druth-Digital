@@ -1,0 +1,15 @@
+{
+  "name": "druth-digital",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Druth Digital broadband plans site with subscription backend",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "dotenv": "^16.6.1",
+    "express": "^4.21.2",
+    "nodemailer": "^6.10.1"
+  }
+}
