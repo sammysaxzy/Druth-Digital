@@ -1,15 +1,41 @@
+import { useState } from "react";
 import { broadbandPlans } from "../data/plans.js";
-import { createPlanCard } from "../components/PlanCard.jsx";
+import { PricingSection } from "../components/PricingSection.jsx";
+import { SubscriptionRequestModal } from "../components/SubscriptionRequestModal.jsx";
+import { useSubscriptionRequest } from "../hooks/useSubscriptionRequest.js";
+import "../styles/subscription.css";
 
-export function renderBroadbandPlans() {
-  return Object.entries(broadbandPlans)
-    .map(([key, category]) => `
-      <div class="plan-panel${key === "residential" ? " is-active" : ""}" id="${key}" role="tabpanel" aria-labelledby="tab-btn-${key}">
-        <div class="plans-grid">
-          ${category.plans.map((plan) => createPlanCard(plan, category.label)).join("")}
-        </div>
-      </div>
-    `)
-    .join("");
+export default function BroadbandPlansPage() {
+  const [selectedPlan, setSelectedPlan] = useState(null);
+  const {
+    formValues,
+    submissionState,
+    updateField,
+    submit,
+    resetForm
+  } = useSubscriptionRequest(selectedPlan);
+
+  function openSubscription(plan) {
+    setSelectedPlan(plan);
+  }
+
+  function closeSubscription() {
+    setSelectedPlan(null);
+    resetForm();
+  }
+
+  return (
+    <>
+      <PricingSection plansByCategory={broadbandPlans} onSubscribe={openSubscription} />
+      <SubscriptionRequestModal
+        isOpen={Boolean(selectedPlan)}
+        selectedPlan={selectedPlan}
+        onClose={closeSubscription}
+        formValues={formValues}
+        submissionState={submissionState}
+        onChange={updateField}
+        onSubmit={submit}
+      />
+    </>
+  );
 }
-

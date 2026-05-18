@@ -1,0 +1,177 @@
+.pricing-section {
+  display: grid;
+  gap: 3rem;
+  padding: 2rem 0 4rem;
+}
+
+.pricing-section__heading p {
+  margin: 0 0 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: #0f5ca8;
+  font-weight: 700;
+  font-size: 0.8rem;
+}
+
+.pricing-section__heading h2 {
+  margin: 0 0 1.5rem;
+  color: #10233f;
+}
+
+.pricing-section__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.5rem;
+}
+
+.pricing-card {
+  background: #ffffff;
+  border: 1px solid #dbe5f0;
+  border-radius: 20px;
+  padding: 1.5rem;
+  box-shadow: 0 18px 45px rgba(15, 53, 100, 0.08);
+  display: grid;
+  gap: 1rem;
+}
+
+.pricing-card__badge {
+  display: inline-flex;
+  padding: 0.4rem 0.75rem;
+  border-radius: 999px;
+  background: #eaf3ff;
+  color: #0f5ca8;
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+.pricing-card__top h3,
+.pricing-card__top p,
+.pricing-card__price strong,
+.pricing-card__price span,
+.pricing-card__features {
+  margin: 0;
+}
+
+.pricing-card__price strong {
+  display: block;
+  font-size: 2rem;
+  color: #10233f;
+}
+
+.pricing-card__price span {
+  color: #51637a;
+}
+
+.pricing-card__features {
+  padding-left: 1.1rem;
+  color: #33485f;
+  display: grid;
+  gap: 0.55rem;
+}
+
+.pricing-card__button,
+.subscription-form__submit,
+.subscription-modal__close {
+  border: 0;
+  border-radius: 14px;
+  cursor: pointer;
+}
+
+.pricing-card__button,
+.subscription-form__submit {
+  background: linear-gradient(135deg, #0f3564 0%, #0f5ca8 100%);
+  color: #ffffff;
+  padding: 0.95rem 1.1rem;
+  font-weight: 700;
+}
+
+.subscription-modal {
+  position: fixed;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  z-index: 1000;
+}
+
+.subscription-modal__backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(9, 22, 43, 0.64);
+}
+
+.subscription-modal__panel {
+  position: relative;
+  width: min(720px, calc(100vw - 2rem));
+  max-height: calc(100vh - 2rem);
+  overflow: auto;
+  background: #ffffff;
+  border-radius: 24px;
+  padding: 1.5rem;
+  box-shadow: 0 28px 60px rgba(9, 22, 43, 0.24);
+}
+
+.subscription-modal__close {
+  background: #eef4fb;
+  color: #10233f;
+  padding: 0.6rem 0.9rem;
+  margin-left: auto;
+  display: block;
+}
+
+.subscription-modal__eyebrow {
+  margin: 0 0 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: #0f5ca8;
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+.subscription-form {
+  display: grid;
+  gap: 1rem;
+}
+
+.subscription-form__grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.subscription-form label {
+  display: grid;
+  gap: 0.45rem;
+  font-weight: 600;
+  color: #10233f;
+}
+
+.subscription-form input,
+.subscription-form textarea {
+  width: 100%;
+  border: 1px solid #c9d6e5;
+  border-radius: 14px;
+  padding: 0.9rem 1rem;
+  font: inherit;
+}
+
+.subscription-form__feedback {
+  border-radius: 14px;
+  padding: 0.9rem 1rem;
+  font-weight: 600;
+}
+
+.subscription-form__feedback--success {
+  background: #eaf8ef;
+  color: #116236;
+}
+
+.subscription-form__feedback--error {
+  background: #fff0f0;
+  color: #a02727;
+}
+
+@media (max-width: 720px) {
+  .subscription-form__grid {
+    grid-template-columns: 1fr;
+  }
+}

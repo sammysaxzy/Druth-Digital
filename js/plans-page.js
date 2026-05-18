@@ -23,6 +23,10 @@ function buildPlanLabel(plan) {
   return `${plan.category} - ${plan.name} (${plan.speed}, ${formatCurrency(plan.monthly)}/month)`;
 }
 
+function normalizeCategoryLabel(category) {
+  return String(category || "").toLowerCase() === "sme" ? "SME" : "Residential";
+}
+
 function createPlanCard(plan, category) {
   const totalCost = getTotalCost(plan);
 
@@ -236,7 +240,7 @@ function attachSelectionHandlers() {
     button.addEventListener("click", () => {
       openModal({
         name: button.dataset.plan || "",
-        category: button.dataset.category || "",
+        category: normalizeCategoryLabel(button.dataset.category || ""),
         speed: button.dataset.speed || "",
         monthly: Number(button.dataset.monthly || 0),
         installation: Number(button.dataset.installation || 0),
@@ -274,26 +278,29 @@ function attachModalHandlers() {
 
     const submitButton = form.querySelector('button[type="submit"]');
     const payload = {
-      name: form.querySelector("#plan-full-name")?.value.trim() || "",
-      phone: form.querySelector("#plan-phone-number")?.value.trim() || "",
-      email: form.querySelector("#plan-email-address")?.value.trim() || "",
-      address: form.querySelector("#plan-installation-address")?.value.trim() || "",
-      plan: form.querySelector("#plan-selected-name")?.value.trim() || "",
-      notes: form.querySelector("#plan-additional-notes")?.value.trim() || "",
+      fullName: form.querySelector("#plan-full-name")?.value.trim() || "",
+      phoneNumber: form.querySelector("#plan-phone-number")?.value.trim() || "",
+      emailAddress: form.querySelector("#plan-email-address")?.value.trim() || "",
+      homeAddress: form.querySelector("#plan-installation-address")?.value.trim() || "",
+      selectedPlan: {
+        planName: selectedPlan.name,
+        category: selectedPlan.category
+      },
+      additionalMessage: form.querySelector("#plan-additional-notes")?.value.trim() || "",
       company: form.querySelector("#plan-company")?.value.trim() || ""
     };
 
-    if (!payload.name || !payload.phone || !payload.email || !payload.address || !payload.plan) {
+    if (!payload.fullName || !payload.phoneNumber || !payload.emailAddress || !payload.homeAddress || !payload.selectedPlan.planName) {
       ui.showToast?.("Missing details", "Please complete all required fields before submitting.", "error");
       return;
     }
 
-    if (!validateEmail(payload.email)) {
+    if (!validateEmail(payload.emailAddress)) {
       ui.showToast?.("Invalid email", "Please enter a valid email address.", "error");
       return;
     }
 
-    if (!validatePhone(payload.phone)) {
+    if (!validatePhone(payload.phoneNumber)) {
       ui.showToast?.("Invalid phone", "Please enter a valid phone number.", "error");
       return;
     }
@@ -307,7 +314,14 @@ function attachModalHandlers() {
     } catch (error) {
       ui.showToast?.("Submission failed", error.message || "Your email app will open so you can still send the request to Druth directly.", "error");
       window.setTimeout(() => {
-        window.location.href = buildFallbackMailto(payload);
+        window.location.href = buildFallbackMailto({
+          name: payload.fullName,
+          phone: payload.phoneNumber,
+          email: payload.emailAddress,
+          address: payload.homeAddress,
+          plan: `${payload.selectedPlan.category} - ${payload.selectedPlan.planName}`,
+          notes: payload.additionalMessage
+        });
       }, 500);
     } finally {
       ui.setButtonLoading?.(submitButton, false);

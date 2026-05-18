@@ -3,6 +3,7 @@ export const residentialPlans = [
     name: "Bronze",
     monthly: 15850,
     installation: 70000,
+    promoInstallation: 40000,
     speed: "Up to 20Mbps",
     devices: "5+ devices",
     data: "Unlimited Data"
@@ -11,6 +12,7 @@ export const residentialPlans = [
     name: "Silver",
     monthly: 21150,
     installation: 70000,
+    promoInstallation: 40000,
     speed: "Up to 25Mbps",
     devices: "7+ devices",
     data: "Unlimited Data"
@@ -19,6 +21,7 @@ export const residentialPlans = [
     name: "Gold",
     monthly: 26350,
     installation: 70000,
+    promoInstallation: 40000,
     speed: "Up to 30Mbps",
     devices: "10+ devices",
     data: "Unlimited Data"
@@ -27,6 +30,7 @@ export const residentialPlans = [
     name: "Platinum",
     monthly: 42150,
     installation: 70000,
+    promoInstallation: 40000,
     speed: "Up to 40Mbps",
     devices: "15+ devices",
     data: "Unlimited Data"

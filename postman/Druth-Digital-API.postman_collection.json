@@ -1,0 +1,89 @@
+{
+  "info": {
+    "name": "Druth Digital API",
+    "_postman_id": "1db1eb74-f857-4d09-8d2f-b7b482be8d23",
+    "description": "Postman collection for testing the Druth Digital subscription backend.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Health Check",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{api_base_url}}/health",
+          "host": [
+            "{{api_base_url}}"
+          ],
+          "path": [
+            "health"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Get Plans",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{api_base_url}}/plans",
+          "host": [
+            "{{api_base_url}}"
+          ],
+          "path": [
+            "plans"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Create Subscription Request",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"fullName\": \"Jane Doe\",\n  \"phoneNumber\": \"+2348012345678\",\n  \"emailAddress\": \"jane@example.com\",\n  \"homeAddress\": \"12 Admiralty Way, Lekki, Lagos\",\n  \"selectedPlan\": {\n    \"planName\": \"Silver\",\n    \"category\": \"Residential\"\n  },\n  \"preferredInstallationDate\": \"2026-05-30\",\n  \"additionalMessage\": \"Please call me before coming.\"\n}"
+        },
+        "url": {
+          "raw": "{{api_base_url}}/subscription-requests",
+          "host": [
+            "{{api_base_url}}"
+          ],
+          "path": [
+            "subscription-requests"
+          ]
+        }
+      }
+    },
+    {
+      "name": "List Subscription Requests",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{api_base_url}}/subscription-requests",
+          "host": [
+            "{{api_base_url}}"
+          ],
+          "path": [
+            "subscription-requests"
+          ]
+        }
+      }
+    }
+  ],
+  "variable": [
+    {
+      "key": "api_base_url",
+      "value": "http://localhost:3000/api"
+    }
+  ]
+}

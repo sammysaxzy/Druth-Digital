@@ -80,7 +80,7 @@ function attachContactFormHandler() {
 
     applyPlanPrefillFromQuery();
 
-    form.addEventListener("submit", (event) => {
+    form.addEventListener("submit", async (event) => {
         event.preventDefault();
 
         const submitButton = form.querySelector('button[type="submit"]');

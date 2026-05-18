@@ -33,6 +33,10 @@ function buildPlanLabel(plan) {
   return `${plan.category} - ${plan.name} (${plan.speed}, ${formatCurrency(plan.monthly)}/month)`;
 }
 
+function normalizeCategoryLabel(category) {
+  return String(category || "").toLowerCase() === "sme" ? "SME" : "Residential";
+}
+
 function populatePlanSummary(plan) {
   const planField = document.getElementById("subscribe-plan");
   const planSummary = document.getElementById("selected-plan-summary");
@@ -94,6 +98,9 @@ function attachSubscribeHandler() {
   }
 
   const plan = getSelectedPlan();
+  if (plan) {
+    plan.category = normalizeCategoryLabel(plan.category);
+  }
   populatePlanSummary(plan);
 
   form.addEventListener("submit", async (event) => {
@@ -127,12 +134,15 @@ function attachSubscribeHandler() {
 
     try {
       const result = await submitSubscription(form, {
-        name,
-        email,
-        phone,
-        address,
-        plan: planValue,
-        notes,
+        fullName: name,
+        emailAddress: email,
+        phoneNumber: phone,
+        homeAddress: address,
+        selectedPlan: {
+          planName: plan.name,
+          category: plan.category
+        },
+        additionalMessage: notes,
         company
       });
 

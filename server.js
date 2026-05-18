@@ -1,24 +1,26 @@
 require("dotenv").config();
 
 const path = require("path");
-const express = require("express");
 
-const subscribeRouter = require("./routes/subscribe");
+const { createApp } = require("./src-backend/app");
+const { connectDatabase } = require("./src-backend/config/db");
 
-const app = express();
 const PORT = Number(process.env.PORT || 3000);
-const rootDir = __dirname;
 
-app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
+async function startServer() {
+  await connectDatabase();
 
-app.use(express.static(rootDir));
-app.use(subscribeRouter);
+  const app = createApp({
+    staticDir: __dirname,
+    subscribePage: path.join(__dirname, "subscribe", "index.html")
+  });
 
-app.get("/subscribe", (req, res) => {
-  res.sendFile(path.join(rootDir, "subscribe", "index.html"));
-});
+  app.listen(PORT, () => {
+    console.log(`Druth site running on http://localhost:${PORT}`);
+  });
+}
 
-app.listen(PORT, () => {
-  console.log(`Druth site running on http://localhost:${PORT}`);
+startServer().catch((error) => {
+  console.error("Failed to start server:", error);
+  process.exit(1);
 });
