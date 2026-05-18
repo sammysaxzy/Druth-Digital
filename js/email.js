@@ -11,7 +11,31 @@ function validatePhone(phone) {
 
 function buildMailtoLink(subject, lines) {
     const body = lines.filter(Boolean).join("\n");
-    return `mailto:${COMPANY_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+  return `mailto:${COMPANY_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+}
+
+async function submitContactForm(form, payload) {
+    const response = await fetch(form.action, {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+            "Accept": "application/json"
+        },
+        body: JSON.stringify(payload)
+    });
+
+    let result = {};
+    try {
+        result = await response.json();
+    } catch (error) {
+        result = {};
+    }
+
+    if (!response.ok) {
+        throw new Error(result.message || "Unable to send your message right now.");
+    }
+
+    return result;
 }
 
 function applyPlanPrefillFromQuery() {
@@ -67,7 +91,7 @@ function attachContactFormHandler() {
             plan: form.querySelector("#contact-plan")?.value.trim() || "",
             location: form.querySelector("#contact-location")?.value.trim() || "",
             message: form.querySelector("#contact-message")?.value.trim() || "",
-            company: "",
+            company: form.querySelector("#contact-company")?.value.trim() || "",
         };
         const consent = form.querySelector("#contact-consent")?.checked;
 
@@ -93,8 +117,6 @@ function attachContactFormHandler() {
 
         const serviceType = payload.plan || "General Inquiry";
         const subject = `New Contact Request from Druth Website - ${serviceType}`;
-        const subjectField = form.querySelector("#contact-subject");
-        const replyToField = form.querySelector("#contact-replyto");
         const messageLines = [
             payload.message,
             "",
@@ -107,28 +129,27 @@ function attachContactFormHandler() {
             `Page: ${window.location.href}`
         ];
 
-        if (subjectField) {
-            subjectField.value = subject;
-        }
-
-        if (replyToField) {
-            replyToField.value = payload.email;
-        }
-
         ui.setButtonLoading?.(submitButton, true, "Sending...");
 
         try {
-            HTMLFormElement.prototype.submit.call(form);
+            const result = await submitContactForm(form, payload);
+            ui.showToast?.(
+                "Message sent",
+                result.message || "Your message has been received. We will contact you shortly.",
+                "success"
+            );
+            form.reset();
         } catch (error) {
             ui.showToast?.(
                 "Send failed",
-                "Your email app will open so you can still send this to Druth directly.",
+                error.message || "Your email app will open so you can still send this to Druth directly.",
                 "error"
             );
 
             window.setTimeout(() => {
                 window.location.href = buildMailtoLink(subject, messageLines);
             }, 500);
+        } finally {
             ui.setButtonLoading?.(submitButton, false);
         }
     });

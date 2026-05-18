@@ -22,19 +22,20 @@ export function createPlanCard(plan, category) {
         <span><i class="fa-solid fa-wifi"></i> ${plan.speed}</span>
       </div>
       <h3 class="plan-title">${plan.name}</h3>
-      <p class="plan-copy">Built for dependable connectivity with unlimited data and a simple setup path.</p>
+      <p class="plan-copy">Clear monthly subscription pricing, separate installation fees, and dependable unlimited connectivity.</p>
       <div class="plan-price">
         <strong>${formatCurrency(plan.monthly)}</strong>
-        <span>/ month</span>
+        <span>/ monthly subscription</span>
       </div>
       <ul class="plan-feature-list broadband-feature-list">
-        <li><i class="fa-solid fa-check"></i> Installation: ${formatCurrency(plan.installation)}</li>
+        <li><i class="fa-solid fa-check"></i> Monthly subscription: ${formatCurrency(plan.monthly)}</li>
+        <li><i class="fa-solid fa-check"></i> Standard installation: ${formatCurrency(plan.installation)}</li>
         <li><i class="fa-solid fa-check"></i> Speed: ${plan.speed}</li>
         <li><i class="fa-solid fa-check"></i> Data: ${plan.data}</li>
         <li><i class="fa-solid fa-check"></i> Devices: ${plan.devices}</li>
       </ul>
       <div class="plan-total">
-        <span>Total first payment</span>
+        <span>First payment at standard rate</span>
         <strong>${formatCurrency(totalCost)}</strong>
       </div>
       <button

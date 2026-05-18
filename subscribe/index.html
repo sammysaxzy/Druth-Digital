@@ -79,12 +79,8 @@
                             <h2 class="section-title" style="font-size:clamp(2rem,3vw,2.8rem);">Submit your details</h2>
                             <p class="section-copy">All required fields are marked by validation, and your selected plan is locked in as read-only.</p>
                         </div>
-                        <form class="form-shell" id="subscribe-form" action="https://formsubmit.co/druthdigital@gmail.com" method="POST" novalidate>
-                            <input type="hidden" name="_subject" value="New Broadband Subscription Request">
-                            <input type="hidden" name="_template" value="table">
-                            <input type="hidden" name="_captcha" value="false">
-                            <input type="hidden" name="_replyto" id="subscribe-replyto" value="">
-                            <input type="text" name="_honey" id="subscribe-company" class="plan-honeypot" tabindex="-1" autocomplete="off" aria-hidden="true">
+                        <form class="form-shell" id="subscribe-form" action="/api/subscribe" method="POST" novalidate>
+                            <input type="text" name="company" id="subscribe-company" class="plan-honeypot" tabindex="-1" autocomplete="off" aria-hidden="true">
                             <div class="form-row">
                                 <div class="form-group">
                                     <label for="subscribe-name">Full Name</label>

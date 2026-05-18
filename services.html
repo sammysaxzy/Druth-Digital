@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Druth Broadband Plans | Powering your connection</title>
-    <meta name="description" content="Explore Druth residential and SME broadband plans. Compare pricing, installation fees, speed, and device support in one clear selector.">
+    <meta name="description" content="Explore Druth residential and SME broadband plans. Compare monthly subscription pricing, standard installation fees, speed, and device support clearly.">
     <meta name="keywords" content="Druth broadband plans, residential broadband, SME internet plans, broadband pricing, Powering your connection">
     <meta name="theme-color" content="#09162b">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -51,7 +51,7 @@
                     <div class="page-hero-copy" data-reveal="left">
                         <span class="eyebrow">Broadband Plans</span>
                         <h1 class="section-title">Compare broadband plans and move straight into subscription</h1>
-                        <p>Choose between residential and SME broadband packages, review monthly and installation costs clearly, and continue to a short subscription form with your selected plan already attached.</p>
+                        <p>Choose between residential and SME broadband packages, review monthly subscription prices separately from standard installation fees, and continue to a short subscription form with your selected plan already attached.</p>
                         <div class="hero-actions page-actions">
                             <a class="btn-primary" href="#plans">Browse Plans</a>
                             <a class="btn-secondary" href="contact.html">Need Help Choosing?</a>
@@ -63,7 +63,7 @@
                             Plan selection flows directly into a subscription request
                         </div>
                         <h2 class="hero-card-title">Every broadband request carries the selected plan details</h2>
-                        <p class="hero-card-copy">Customers start with pricing comparison, move into a dedicated subscription page, and Druth receives the request details for quick follow-up.</p>
+                        <p class="hero-card-copy">Customers start with a clear pricing comparison, see standard installation fees separately, then send their request for quick follow-up.</p>
                         <div class="info-grid two-up" id="broadband-summary" style="margin-top:1.2rem;"></div>
                     </aside>
                 </div>
@@ -74,7 +74,7 @@
                     <div class="section-heading centered" data-reveal>
                         <span class="eyebrow">Choose A Category</span>
                         <h2 class="section-title">Residential and SME broadband plans</h2>
-                        <p class="section-copy">Switch between categories to compare monthly pricing, installation fees, device support, and total first payment before you continue to subscribe.</p>
+                        <p class="section-copy">Switch between categories to compare monthly subscription pricing, standard installation fees, device support, and first-payment totals before you continue to subscribe.</p>
                     </div>
 
                     <div class="tab-list" role="tablist" aria-label="Plan categories" data-reveal>
@@ -144,12 +144,8 @@
                     <strong>No plan selected yet.</strong>
                     <p>Choose a plan card first to continue.</p>
                 </div>
-                <form class="form-shell" id="plan-request-form" action="https://formsubmit.co/druthdigital@gmail.com" method="POST" novalidate>
-                    <input type="hidden" name="_subject" value="New Internet Plan Request">
-                    <input type="hidden" name="_template" value="table">
-                    <input type="hidden" name="_captcha" value="false">
-                    <input type="hidden" name="_replyto" id="plan-replyto" value="">
-                    <input type="text" name="_honey" id="plan-company" class="plan-honeypot" tabindex="-1" autocomplete="off" aria-hidden="true">
+                <form class="form-shell" id="plan-request-form" action="/api/subscribe" method="POST" novalidate>
+                    <input type="text" name="company" id="plan-company" class="plan-honeypot" tabindex="-1" autocomplete="off" aria-hidden="true">
                     <div class="form-row">
                         <div class="form-group">
                             <label for="plan-full-name">Full Name</label>

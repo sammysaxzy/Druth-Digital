@@ -33,19 +33,20 @@ function createPlanCard(plan, category) {
         <span><i class="fa-solid fa-wifi"></i> ${plan.speed}</span>
       </div>
       <h3 class="plan-title">${plan.name}</h3>
-      <p class="plan-copy">Built for dependable connectivity with unlimited data and a simple setup path.</p>
+      <p class="plan-copy">Clear monthly subscription pricing, separate installation fees, and dependable unlimited connectivity.</p>
       <div class="plan-price">
         <strong>${formatCurrency(plan.monthly)}</strong>
-        <span>/ month</span>
+        <span>/ monthly subscription</span>
       </div>
       <ul class="plan-feature-list broadband-feature-list">
-        <li><i class="fa-solid fa-check"></i> Installation: ${formatCurrency(plan.installation)}</li>
+        <li><i class="fa-solid fa-check"></i> Monthly subscription: ${formatCurrency(plan.monthly)}</li>
+        <li><i class="fa-solid fa-check"></i> Standard installation: ${formatCurrency(plan.installation)}</li>
         <li><i class="fa-solid fa-check"></i> Speed: ${plan.speed}</li>
         <li><i class="fa-solid fa-check"></i> Data: ${plan.data}</li>
         <li><i class="fa-solid fa-check"></i> Devices: ${plan.devices}</li>
       </ul>
       <div class="plan-total">
-        <span>Total first payment</span>
+        <span>First payment at standard rate</span>
         <strong>${formatCurrency(totalCost)}</strong>
       </div>
       <button
@@ -75,15 +76,16 @@ function renderSummaryCards() {
   const categories = Object.values(broadbandPlans);
   summaryContainer.innerHTML = categories.map((category) => {
     const lowestMonthly = Math.min(...category.plans.map((plan) => plan.monthly));
+    const installationFee = category.plans[0]?.installation || 0;
     const highestSpeed = category.plans.reduce((max, plan) => {
       const speedValue = Number.parseInt(plan.speed, 10);
       return speedValue > max ? speedValue : max;
     }, 0);
-
     return `
       <div class="info-panel">
         <strong>${category.label}</strong>
         <p>Starts from ${formatCurrency(lowestMonthly)} monthly with speeds up to ${highestSpeed} Mbps.</p>
+        <p>Standard installation is ${formatCurrency(installationFee)}.</p>
       </div>
     `;
   }).join("");
@@ -140,7 +142,7 @@ function updateModalSummary(plan) {
   summary.innerHTML = `
     <strong>${plan.name}</strong>
     <p>${plan.category} plan with ${plan.speed}, ${plan.data} data, and support for ${plan.devices}.</p>
-    <p>Monthly: ${formatCurrency(plan.monthly)} | Installation: ${formatCurrency(plan.installation)} | Total first payment: ${formatCurrency(plan.total)}</p>
+    <p>Monthly subscription: ${formatCurrency(plan.monthly)} | Standard installation: ${formatCurrency(plan.installation)} | First payment: ${formatCurrency(plan.total)}</p>
   `;
 }
 
@@ -205,6 +207,30 @@ function buildFallbackMailto(payload) {
   return `mailto:${COMPANY_EMAIL}?subject=${encodeURIComponent("New Internet Plan Request")}&body=${encodeURIComponent(lines.join("\n"))}`;
 }
 
+async function submitPlanRequest(form, payload) {
+  const response = await fetch(form.action, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      "Accept": "application/json"
+    },
+    body: JSON.stringify(payload)
+  });
+
+  let result = {};
+  try {
+    result = await response.json();
+  } catch (error) {
+    result = {};
+  }
+
+  if (!response.ok) {
+    throw new Error(result.message || "Unable to send your request right now.");
+  }
+
+  return result;
+}
+
 function attachSelectionHandlers() {
   document.querySelectorAll(".plan-select").forEach((button) => {
     button.addEventListener("click", () => {
@@ -238,7 +264,7 @@ function attachModalHandlers() {
     }
   });
 
-  form.addEventListener("submit", (event) => {
+  form.addEventListener("submit", async (event) => {
     event.preventDefault();
 
     if (!selectedPlan) {
@@ -247,7 +273,6 @@ function attachModalHandlers() {
     }
 
     const submitButton = form.querySelector('button[type="submit"]');
-    const replyToField = form.querySelector("#plan-replyto");
     const payload = {
       name: form.querySelector("#plan-full-name")?.value.trim() || "",
       phone: form.querySelector("#plan-phone-number")?.value.trim() || "",
@@ -275,17 +300,16 @@ function attachModalHandlers() {
 
     ui.setButtonLoading?.(submitButton, true, "Submitting...");
 
-    if (replyToField) {
-      replyToField.value = payload.email;
-    }
-
     try {
-      HTMLFormElement.prototype.submit.call(form);
+      const result = await submitPlanRequest(form, payload);
+      ui.showToast?.("Request sent", result.message || "Your request has been received. We will contact you shortly.", "success");
+      closeModal();
     } catch (error) {
-      ui.showToast?.("Submission failed", "Your email app will open so you can still send the request to Druth directly.", "error");
+      ui.showToast?.("Submission failed", error.message || "Your email app will open so you can still send the request to Druth directly.", "error");
       window.setTimeout(() => {
         window.location.href = buildFallbackMailto(payload);
       }, 500);
+    } finally {
       ui.setButtonLoading?.(submitButton, false);
     }
   });

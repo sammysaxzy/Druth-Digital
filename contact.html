@@ -111,12 +111,8 @@
                             <h2 class="section-title" style="font-size:clamp(2rem,3vw,2.8rem);">Send your details</h2>
                             <p class="section-copy">Use the form for plan questions, callback requests, or custom business and dedicated needs.</p>
                         </div>
-                        <form class="form-shell" id="contact-inquiry-form" action="https://formsubmit.co/druthdigital@gmail.com" method="POST" novalidate>
-                            <input type="hidden" name="_subject" id="contact-subject" value="New Contact Request from Druth Website - General Inquiry">
-                            <input type="hidden" name="_template" value="table">
-                            <input type="hidden" name="_captcha" value="false">
-                            <input type="hidden" name="_replyto" id="contact-replyto" value="">
-                            <input type="text" name="_honey" class="plan-honeypot" tabindex="-1" autocomplete="off" aria-hidden="true">
+                        <form class="form-shell" id="contact-inquiry-form" action="/api/contact" method="POST" novalidate>
+                            <input type="text" name="company" id="contact-company" class="plan-honeypot" tabindex="-1" autocomplete="off" aria-hidden="true">
                             <div class="form-row">
                                 <div class="form-group">
                                     <label for="contact-name">Name</label>

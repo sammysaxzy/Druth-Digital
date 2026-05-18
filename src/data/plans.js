@@ -1,35 +1,35 @@
 export const residentialPlans = [
   {
-    name: "Bronze Home",
-    monthly: 21150,
-    installation: 35000,
-    speed: " Up To 20 Mbps",
+    name: "Bronze",
+    monthly: 15850,
+    installation: 70000,
+    speed: "Up to 20Mbps",
     devices: "5+ devices",
-    data: "Unlimited"
+    data: "Unlimited Data"
   },
   {
-    name: "Silver Home",
-    monthly: 26350,
-    installation: 35000,
-    speed: "Up To 25 Mbps",
+    name: "Silver",
+    monthly: 21150,
+    installation: 70000,
+    speed: "Up to 25Mbps",
     devices: "7+ devices",
-    data: "Unlimited"
+    data: "Unlimited Data"
   },
   {
-    name: "Gold Home",
+    name: "Gold",
+    monthly: 26350,
+    installation: 70000,
+    speed: "Up to 30Mbps",
+    devices: "10+ devices",
+    data: "Unlimited Data"
+  },
+  {
+    name: "Platinum",
     monthly: 42150,
-    installation: 35000,
-    speed: "Up To 40 Mbps",
-    devices: "12+ devices",
-    data: "Unlimited"
-  },
-  {
-    name: "Platinum Home",
-    monthly: 53300,
-    installation: 35000,
-    speed: "Up To 80 Mbps",
+    installation: 70000,
+    speed: "Up to 40Mbps",
     devices: "15+ devices",
-    data: "Unlimited"
+    data: "Unlimited Data"
   }
 ];
 
@@ -38,33 +38,33 @@ export const smePlans = [
     name: "SME Silver",
     monthly: 45500,
     installation: 120000,
-    speed: "Up To 20 Mbps",
+    speed: "Up to 20Mbps",
     devices: "5+ devices",
-    data: "Unlimited"
-  },
-  {
-    name: "SME Topaz",
-    monthly: 82500,
-    installation: 120000,
-    speed: "Up To 40 Mbps",
-    devices: "7+ devices",
-    data: "Unlimited"
+    data: "Unlimited Data"
   },
   {
     name: "SME Plus",
+    monthly: 82500,
+    installation: 120000,
+    speed: "Up to 40Mbps",
+    devices: "7+ devices",
+    data: "Unlimited Data"
+  },
+  {
+    name: "SME Topaz",
     monthly: 122500,
     installation: 120000,
-    speed: "Up To 60 Mbps",
+    speed: "Up to 60Mbps",
     devices: "12+ devices",
-    data: "Unlimited"
+    data: "Unlimited Data"
   },
   {
     name: "SME Diamond",
     monthly: 155075,
     installation: 120000,
-    speed: "Up To 75 Mbps",
+    speed: "Up to 75Mbps",
     devices: "15+ devices",
-    data: "Unlimited"
+    data: "Unlimited Data"
   }
 ];
 
