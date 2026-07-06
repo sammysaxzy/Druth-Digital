@@ -4,6 +4,11 @@
   padding: 2rem 0 4rem;
 }
 
+.pricing-section__group {
+  display: grid;
+  gap: 0;
+}
+
 .pricing-section__heading p {
   margin: 0 0 0.5rem;
   text-transform: uppercase;
@@ -32,6 +37,13 @@
   box-shadow: 0 18px 45px rgba(15, 53, 100, 0.08);
   display: grid;
   gap: 1rem;
+  transition: transform 200ms ease, box-shadow 200ms ease, border-color 200ms ease;
+}
+
+.pricing-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 22px 52px rgba(15, 53, 100, 0.12);
+  border-color: #b9d0e8;
 }
 
 .pricing-card__badge {
@@ -83,6 +95,17 @@
   color: #ffffff;
   padding: 0.95rem 1.1rem;
   font-weight: 700;
+  transition: transform 180ms ease, box-shadow 180ms ease, filter 180ms ease;
+}
+
+.pricing-card__button:hover,
+.pricing-card__button:focus-visible,
+.subscription-form__submit:hover,
+.subscription-form__submit:focus-visible {
+  transform: translateY(-1px);
+  box-shadow: 0 14px 26px rgba(15, 53, 100, 0.2);
+  filter: brightness(1.04);
+  outline: none;
 }
 
 .subscription-modal {

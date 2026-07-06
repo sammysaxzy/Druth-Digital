@@ -4,7 +4,7 @@ const pricingPlans = {
       name: "Bronze",
       speed: "Up to 20Mbps",
       data: "Unlimited Data",
-      monthlySubscription: 15850,
+      monthlySubscription: 21500,
       installationFee: 70000,
       promoInstallationFee: 40000,
       devices: "5+ devices"
@@ -13,7 +13,7 @@ const pricingPlans = {
       name: "Silver",
       speed: "Up to 25Mbps",
       data: "Unlimited Data",
-      monthlySubscription: 21150,
+      monthlySubscription: 26900,
       installationFee: 70000,
       promoInstallationFee: 40000,
       devices: "7+ devices"
@@ -22,7 +22,7 @@ const pricingPlans = {
       name: "Gold",
       speed: "Up to 30Mbps",
       data: "Unlimited Data",
-      monthlySubscription: 26350,
+      monthlySubscription: 32300,
       installationFee: 70000,
       promoInstallationFee: 40000,
       devices: "10+ devices"
@@ -31,7 +31,7 @@ const pricingPlans = {
       name: "Platinum",
       speed: "Up to 40Mbps",
       data: "Unlimited Data",
-      monthlySubscription: 42150,
+      monthlySubscription: 48400,
       installationFee: 70000,
       promoInstallationFee: 40000,
       devices: "15+ devices"

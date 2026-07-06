@@ -1,7 +1,7 @@
 export const residentialPlans = [
   {
     name: "Bronze",
-    monthly: 15850,
+    monthly: 21500,
     installation: 70000,
     promoInstallation: 40000,
     speed: "Up to 20Mbps",
@@ -10,7 +10,7 @@ export const residentialPlans = [
   },
   {
     name: "Silver",
-    monthly: 21150,
+    monthly: 26900,
     installation: 70000,
     promoInstallation: 40000,
     speed: "Up to 25Mbps",
@@ -19,7 +19,7 @@ export const residentialPlans = [
   },
   {
     name: "Gold",
-    monthly: 26350,
+    monthly: 32300,
     installation: 70000,
     promoInstallation: 40000,
     speed: "Up to 30Mbps",
@@ -28,7 +28,7 @@ export const residentialPlans = [
   },
   {
     name: "Platinum",
-    monthly: 42150,
+    monthly: 48400,
     installation: 70000,
     promoInstallation: 40000,
     speed: "Up to 40Mbps",
@@ -82,4 +82,3 @@ export const broadbandPlans = {
     plans: smePlans
   }
 };
-
