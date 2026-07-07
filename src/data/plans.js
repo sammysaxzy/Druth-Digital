@@ -40,34 +40,34 @@ export const residentialPlans = [
 export const smePlans = [
   {
     name: "SME Silver",
-    monthly: 45500,
+    monthly: 51400,
     installation: 120000,
-    speed: "Up to 20Mbps",
-    devices: "5+ devices",
+    speed: "Up to 45Mbps",
+    devices: "17+ devices",
     data: "Unlimited Data"
   },
   {
     name: "SME Plus",
-    monthly: 82500,
+    monthly: 93100,
     installation: 120000,
-    speed: "Up to 40Mbps",
-    devices: "7+ devices",
+    speed: "Up to 60Mbps",
+    devices: "20+ devices",
     data: "Unlimited Data"
   },
   {
     name: "SME Topaz",
-    monthly: 122500,
+    monthly: 138300,
     installation: 120000,
-    speed: "Up to 60Mbps",
-    devices: "12+ devices",
+    speed: "Up to 75Mbps",
+    devices: "25+ devices",
     data: "Unlimited Data"
   },
   {
     name: "SME Diamond",
-    monthly: 155075,
+    monthly: 175000,
     installation: 120000,
-    speed: "Up to 75Mbps",
-    devices: "15+ devices",
+    speed: "Up to 100Mbps",
+    devices: "30+ devices",
     data: "Unlimited Data"
   }
 ];

@@ -40,33 +40,33 @@ const pricingPlans = {
   sme: [
     {
       name: "SME Silver",
-      speed: "Up to 20Mbps",
+      speed: "Up to 45Mbps",
       data: "Unlimited Data",
-      monthlySubscription: 45500,
+      monthlySubscription: 51400,
       installationFee: 120000,
       devices: "5+ devices"
     },
     {
       name: "SME Plus",
-      speed: "Up to 40Mbps",
+      speed: "Up to 60Mbps",
       data: "Unlimited Data",
-      monthlySubscription: 82500,
+      monthlySubscription: 93100,
       installationFee: 120000,
       devices: "7+ devices"
     },
     {
       name: "SME Topaz",
-      speed: "Up to 60Mbps",
+      speed: "Up to 75Mbps",
       data: "Unlimited Data",
-      monthlySubscription: 122500,
+      monthlySubscription: 138300,
       installationFee: 120000,
       devices: "12+ devices"
     },
     {
       name: "SME Diamond",
-      speed: "Up to 75Mbps",
+      speed: "Up to 100Mbps",
       data: "Unlimited Data",
-      monthlySubscription: 155075,
+      monthlySubscription: 175000,
       installationFee: 120000,
       devices: "15+ devices"
     }
