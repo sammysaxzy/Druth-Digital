@@ -7,8 +7,10 @@ const toastStack = document.getElementById("toast-stack");
 
 const REDUCED_MOTION = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 const WHATSAPP_CHAT_CONFIG = {
-    phoneNumber: "2348083010887",
-    message: "Hello, Welcome to Druth! How can we assist you today?"
+    // Update this number in one place if the company WhatsApp complaint line changes later.
+    phoneNumber: "2349065197058",
+    // Update this message if you want a different default text in WhatsApp.
+    message: "Hello Druth Digital Support, I need help with a complaint or request."
 };
 
 function initTheme() {
@@ -238,6 +240,22 @@ function createWhatsAppUrl(phoneNumber, message) {
     return `https://wa.me/${sanitizedPhone}?text=${encodedMessage}`;
 }
 
+function syncWhatsAppLinks() {
+    const { phoneNumber, message } = WHATSAPP_CHAT_CONFIG;
+    const whatsappUrl = createWhatsAppUrl(phoneNumber, message);
+    const selectors = [
+        'a[data-whatsapp-link]',
+        'a[href*="wa.me/"]',
+        'a[href*="api.whatsapp.com/"]'
+    ];
+
+    document.querySelectorAll(selectors.join(", ")).forEach((link) => {
+        link.href = whatsappUrl;
+        link.target = "_blank";
+        link.rel = "noopener noreferrer";
+    });
+}
+
 function initWhatsAppChat() {
     const { phoneNumber, message } = WHATSAPP_CHAT_CONFIG;
 
@@ -375,6 +393,7 @@ initPlanTabs();
 initSmoothAnchors();
 initPageTransitions();
 revealElements();
+syncWhatsAppLinks();
 initWhatsAppChat();
 
 window.addEventListener("scroll", updateHeaderState, { passive: true });

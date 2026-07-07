@@ -6,6 +6,7 @@ const path = require("path");
 const rateLimit = require("express-rate-limit");
 
 const requestRoutes = require("./routes/requestRoutes");
+const whatsappRoutes = require("./routes/whatsappRoutes");
 const { notFound } = require("./middlewares/notFound");
 const { errorHandler } = require("./middlewares/errorHandler");
 
@@ -51,6 +52,7 @@ function createApp({ staticDir, subscribePage }) {
   });
 
   app.use("/api", requestRoutes);
+  app.use("/api/whatsapp", whatsappRoutes);
 
   if (staticDir) {
     app.use(express.static(staticDir));

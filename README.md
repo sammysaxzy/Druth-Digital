@@ -101,6 +101,19 @@ Updates request status. Supported values:
 - `completed`
 - `cancelled`
 
+### `GET /api/whatsapp/webhook`
+Meta WhatsApp Cloud API verification endpoint. Configure your webhook in Meta to point here.
+
+### `POST /api/whatsapp/webhook`
+Receives inbound WhatsApp messages and sends an automatic support acknowledgment that asks for:
+
+- full name
+- location or address
+- whether the customer is existing or new
+- the complaint or request details
+
+If the incoming message contains a serious-complaint keyword such as `urgent`, `outage`, `fraud`, `manager`, or `complaint`, the auto-reply also states that the issue will be escalated to management.
+
 ## MongoDB Schema
 
 The `SubscriptionRequest` model stores:
@@ -183,6 +196,13 @@ Copy `.env.example` to `.env`.
 - `NODE_ENV`
 - `RATE_LIMIT_MAX`
 - `MONGODB_TIMEOUT_MS`
+- `WHATSAPP_ACCESS_TOKEN`
+- `WHATSAPP_PHONE_NUMBER_ID`
+- `WHATSAPP_VERIFY_TOKEN`
+- `WHATSAPP_API_VERSION`
+- `WHATSAPP_AUTO_REPLY`
+- `WHATSAPP_ESCALATION_REPLY`
+- `WHATSAPP_ESCALATION_KEYWORDS`
 
 ## Local Development
 
