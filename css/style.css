@@ -2225,7 +2225,8 @@ body::before { opacity: 0; }
 .header::before,
 .header.is-scrolled::before { background: rgba(255,255,255,.94); border-bottom-color: #ededee; }
 .brand-logo,
-[data-theme="light"] .brand-logo { padding: 0; background: transparent; border: 0; box-shadow: none; }
+[data-theme="light"] .brand-logo { width: 178px; height: auto; max-width: 48vw; padding: 0; background: transparent; border: 0; box-shadow: none; object-fit: contain; }
+.brand-footer .brand-logo { width: 205px; height: auto; }
 .nav-link { color: #56565b; }
 .nav-link:hover, .nav-link:focus-visible, .nav-link.active { color: #151515; background: #f5f5f6; }
 .nav-toggle { background: #fff; border-color: #e5e5e7; }
