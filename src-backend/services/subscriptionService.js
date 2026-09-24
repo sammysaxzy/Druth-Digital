@@ -37,6 +37,7 @@ async function sendSubscriptionNotifications(payload) {
 async function sendContactNotifications(payload) {
   const adminEmail = process.env.LEAD_NOTIFICATION_EMAIL || process.env.SMTP_USER;
   const from = process.env.MAIL_FROM || process.env.SMTP_USER;
+  const submittedAt = new Date().toLocaleString("en-NG", { timeZone: "Africa/Lagos" });
 
   await Promise.all([
     sendEmail({
@@ -55,10 +56,11 @@ async function sendContactNotifications(payload) {
             <li><strong>Plan:</strong> ${payload.plan || "Not selected"}</li>
             <li><strong>Location:</strong> ${payload.location || "Not provided"}</li>
             <li><strong>Message:</strong> ${payload.message}</li>
+            <li><strong>Submitted:</strong> ${submittedAt} (WAT)</li>
           </ul>
         </div>
       `,
-      text: `Name: ${payload.name}\nEmail: ${payload.email}\nPhone: ${payload.phone || "Not provided"}\nPlan: ${payload.plan || "Not selected"}\nLocation: ${payload.location || "Not provided"}\nMessage: ${payload.message}`
+      text: `Name: ${payload.name}\nEmail: ${payload.email}\nPhone: ${payload.phone || "Not provided"}\nPlan: ${payload.plan || "Not selected"}\nLocation: ${payload.location || "Not provided"}\nMessage: ${payload.message}\nSubmitted: ${submittedAt} (WAT)`
     }),
     sendEmail({
       from,

@@ -14,7 +14,7 @@ const WHATSAPP_CHAT_CONFIG = {
 };
 
 function initTheme() {
-    root.setAttribute("data-theme", "dark");
+    root.setAttribute("data-theme", "light");
 }
 
 function showToast(title, message, type = "info") {
@@ -385,6 +385,54 @@ function initNav() {
     });
 }
 
+function initCoverage() {
+    const search = document.getElementById("coverage-search");
+    const grid = document.getElementById("coverage-grid");
+    const empty = document.getElementById("coverage-empty");
+    const modal = document.getElementById("coverage-modal");
+    const modalName = document.getElementById("coverage-modal-name");
+    const dialog = modal?.querySelector(".coverage-modal__dialog");
+    let lastTrigger = null;
+
+    if (!grid) return;
+
+    const closeModal = () => {
+        if (!modal) return;
+        modal.classList.remove("is-open");
+        modal.setAttribute("aria-hidden", "true");
+        document.body.classList.remove("modal-open");
+        lastTrigger?.focus();
+    };
+
+    const filterLocations = () => {
+        const query = (search?.value || "").trim().toLocaleLowerCase();
+        let visible = 0;
+        grid.querySelectorAll(".coverage-card").forEach((card) => {
+            const match = card.dataset.location.toLocaleLowerCase().includes(query);
+            card.hidden = !match;
+            if (match) visible += 1;
+        });
+        if (empty) empty.hidden = visible > 0;
+    };
+
+    search?.addEventListener("input", filterLocations);
+    grid.querySelectorAll(".coverage-card").forEach((card) => {
+        card.addEventListener("click", () => {
+            if (!modal || !modalName) return;
+            lastTrigger = card;
+            modalName.textContent = card.dataset.location;
+            modal.classList.add("is-open");
+            modal.setAttribute("aria-hidden", "false");
+            document.body.classList.add("modal-open");
+            window.setTimeout(() => dialog?.querySelector("a")?.focus(), 120);
+        });
+    });
+    modal?.querySelectorAll("[data-coverage-close]").forEach((element) => element.addEventListener("click", closeModal));
+    document.addEventListener("keydown", (event) => {
+        if (event.key === "Escape" && modal?.classList.contains("is-open")) closeModal();
+    });
+}
+
 initTheme();
 updateHeaderState();
 initLoader();
@@ -395,6 +443,7 @@ initPageTransitions();
 revealElements();
 syncWhatsAppLinks();
 initWhatsAppChat();
+initCoverage();
 
 window.addEventListener("scroll", updateHeaderState, { passive: true });
 

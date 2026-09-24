@@ -1,5 +1,13 @@
 const { formatCurrency, formatDate } = require("./formatters");
 
+function formatSubmittedAt(value) {
+  return new Intl.DateTimeFormat("en-NG", {
+    dateStyle: "long",
+    timeStyle: "short",
+    timeZone: "Africa/Lagos"
+  }).format(new Date(value));
+}
+
 function buildEmailShell({ title, intro, body }) {
   return `
     <div style="margin:0;padding:24px;background:#f4f7fb;font-family:Arial,sans-serif;color:#10233f;">
@@ -41,6 +49,7 @@ function buildSummaryTable(subscription) {
         ${promoRow}
         <tr><td style="padding:12px;border-bottom:1px solid #e6edf5;font-weight:600;">Preferred installation date</td><td style="padding:12px;border-bottom:1px solid #e6edf5;">${formatDate(subscription.preferredInstallationDate)}</td></tr>
         <tr><td style="padding:12px;font-weight:600;">Additional message</td><td style="padding:12px;">${subscription.additionalMessage || "None"}</td></tr>
+        <tr><td style="padding:12px;font-weight:600;">Submitted</td><td style="padding:12px;">${formatSubmittedAt(subscription.createdAt || new Date())} (WAT)</td></tr>
       </tbody>
     </table>
   `;
